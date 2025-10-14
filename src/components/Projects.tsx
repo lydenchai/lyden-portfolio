@@ -105,19 +105,19 @@ const Projects = () => {
   const otherProjects = projects.filter((project) => !project.featured);
 
   return (
-    <section id="projects" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
+    <section id="projects" className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
             My <span className="text-gradient">Projects</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-xs sm:max-w-2xl lg:max-w-3xl mx-auto px-4 sm:px-0 leading-relaxed">
             Showcasing enterprise-level applications and platforms I've
             developed for government institutions and modern businesses,
             focusing on scalable solutions and exceptional user experiences.
@@ -130,12 +130,12 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-20"
+          className="mb-12 sm:mb-16 lg:mb-20 px-4 sm:px-0"
         >
-          <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
             Featured Projects
           </h3>
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {featuredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -149,7 +149,7 @@ const Projects = () => {
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
-                    className="w-full h-64 object-cover transition-transform duration-300 hover:scale-110"
+                    className="w-full h-48 sm:h-56 lg:h-64 object-cover transition-transform duration-300 hover:scale-110"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = `https://via.placeholder.com/800x400/6366f1/ffffff?text=${encodeURIComponent(
@@ -160,11 +160,11 @@ const Projects = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 </div>
 
-                <div className="p-8">
-                  <h4 className="text-2xl font-bold text-gray-900 mb-4">
+                <div className="p-4 sm:p-6 lg:p-8">
+                  <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
                     {project.title}
                   </h4>
-                  <p className="text-gray-600 mb-6">{project.description}</p>
+                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">{project.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -177,11 +177,12 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          className="px-4 sm:px-0"
         >
-          <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
             Other Projects
           </h3>
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {otherProjects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -195,7 +196,7 @@ const Projects = () => {
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
-                    className="w-full h-64 object-cover transition-transform duration-300 hover:scale-110"
+                    className="w-full h-48 sm:h-56 lg:h-64 object-cover transition-transform duration-300 hover:scale-110"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = `https://via.placeholder.com/800x400/6366f1/ffffff?text=${encodeURIComponent(
@@ -206,11 +207,11 @@ const Projects = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 </div>
 
-                <div className="p-8">
-                  <h4 className="text-2xl font-bold text-gray-900 mb-4">
+                <div className="p-4 sm:p-6 lg:p-8">
+                  <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
                     {project.title}
                   </h4>
-                  <p className="text-gray-600 mb-6">{project.description}</p>
+                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">{project.description}</p>
                 </div>
               </motion.div>
             ))}

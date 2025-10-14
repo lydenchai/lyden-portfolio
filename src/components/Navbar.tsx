@@ -78,8 +78,8 @@ const Navbar = () => {
         scrolled ? "bg-white/90 backdrop-blur-sm shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
           <motion.a
             href="#"
@@ -91,7 +91,7 @@ const Navbar = () => {
             }}
           >
             <span
-              className={`ml-2 text-xl font-bold transition-colors duration-300 ${
+              className={`ml-2 text-lg sm:text-xl font-bold transition-colors duration-300 ${
                 scrolled ? "text-gray-900" : "text-white"
               }`}
             >
@@ -100,14 +100,14 @@ const Navbar = () => {
           </motion.a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
             {navItems.map((item, index) => {
               const isActive = activeSection === item.section;
               return (
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className={`relative font-medium transition-all duration-300 px-3 py-2 ${
+                  className={`relative font-medium transition-all duration-300 px-2 py-1 lg:px-3 lg:py-2 text-sm lg:text-base ${
                     isActive
                       ? "text-purple-600 bg-white/10 backdrop-blur-sm rounded-full"
                       : scrolled
@@ -138,7 +138,7 @@ const Navbar = () => {
               );
             })}
             <motion.button
-              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-1.5 lg:px-6 lg:py-2 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 text-sm lg:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => handleNavClick("#contact")}
@@ -149,7 +149,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className={`md:hidden p-2 rounded-lg transition-colors duration-300 ${
+            className={`md:hidden p-1.5 rounded-lg transition-colors duration-300 ${
               scrolled
                 ? "text-gray-900 hover:bg-gray-100"
                 : "text-white hover:bg-white/10"
@@ -158,7 +158,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </motion.button>
         </div>
       </div>
@@ -173,14 +173,14 @@ const Navbar = () => {
             transition={{ duration: 0.3 }}
             className="md:hidden bg-white/95 backdrop-blur-sm border-t border-gray-200"
           >
-            <div className="container mx-auto px-6 py-4">
+            <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
               {navItems.map((item, index) => {
                 const isActive = activeSection === item.section;
                 return (
                   <motion.a
                     key={item.name}
                     href={item.href}
-                    className={`flex items-center justify-between py-3 font-medium transition-colors duration-300 ${
+                    className={`flex items-center justify-between py-2.5 sm:py-3 font-medium transition-colors duration-300 text-sm sm:text-base ${
                       isActive
                         ? "text-purple-600"
                         : "text-gray-700 hover:text-purple-600"
@@ -206,7 +206,7 @@ const Navbar = () => {
                 );
               })}
               <motion.button
-                className="w-full mt-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-full font-semibold"
+                className="w-full mt-3 sm:mt-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
