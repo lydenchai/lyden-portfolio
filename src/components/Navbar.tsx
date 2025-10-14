@@ -59,7 +59,6 @@ const Navbar = () => {
   const handleNavClick = (href: string) => {
     setIsOpen(false);
     if (href === "#") {
-      // Handle Home link - scroll to top
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else if (href.startsWith("#")) {
       const element = document.querySelector(href);
@@ -91,7 +90,7 @@ const Navbar = () => {
             }}
           >
             <span
-              className={`ml-2 text-lg sm:text-xl font-bold transition-colors duration-300 ${
+              className={`text-lg sm:text-xl font-bold transition-colors duration-300 ${
                 scrolled ? "text-gray-900" : "text-white"
               }`}
             >
@@ -171,16 +170,16 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white/95 backdrop-blur-sm border-t border-gray-200"
+            className="md:hidden mx-4 mb-3 rounded-lg bg-white/95 backdrop-blur-sm border-t border-gray-200"
           >
             <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
               {navItems.map((item, index) => {
                 const isActive = activeSection === item.section;
                 return (
-                  <motion.a
+                  <motion.button
                     key={item.name}
-                    href={item.href}
-                    className={`flex items-center justify-between py-2.5 sm:py-3 font-medium transition-colors duration-300 text-sm sm:text-base ${
+                    type="button"
+                    className={`flex items-center justify-between py-2.5 sm:py-3 font-medium transition-colors duration-300 text-sm sm:text-base w-full text-left ${
                       isActive
                         ? "text-purple-600"
                         : "text-gray-700 hover:text-purple-600"
@@ -188,10 +187,7 @@ const Navbar = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavClick(item.href);
-                    }}
+                    onClick={() => handleNavClick(item.href)}
                   >
                     <span>{item.name}</span>
                     {isActive && (
@@ -202,7 +198,7 @@ const Navbar = () => {
                         transition={{ duration: 0.3 }}
                       />
                     )}
-                  </motion.a>
+                  </motion.button>
                 );
               })}
               <motion.button

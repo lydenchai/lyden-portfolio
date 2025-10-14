@@ -106,7 +106,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-12 sm:py-16 lg:py-20 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto sm:px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -164,7 +164,9 @@ const Projects = () => {
                   <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
                     {project.title}
                   </h4>
-                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">{project.description}</p>
+                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
+                    {project.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -211,7 +213,9 @@ const Projects = () => {
                   <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
                     {project.title}
                   </h4>
-                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">{project.description}</p>
+                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
+                    {project.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
