@@ -1,12 +1,6 @@
 import { motion } from "framer-motion";
 import Icon from "@mdi/react";
-import {
-  mdiGithub,
-  mdiLinkedin,
-  mdiEmail,
-  mdiInstagram,
-  mdiDownload,
-} from "@mdi/js";
+import { mdiGithub, mdiLinkedin, mdiInstagram, mdiDownload } from "@mdi/js";
 
 // Import CV
 import cvFile from "../assets/cv/curriculum-vitae.pdf";
@@ -119,24 +113,22 @@ const Hero = () => {
           >
             {[
               {
-                icon: mdiEmail,
-                href: "mailto:lyden.chai@gmail.com",
-                label: "Email",
+                icon: mdiLinkedin,
+                label: "LinkedIn",
+                href: "https://www.linkedin.com/in/lyden-chai/",
+                target: "_blank",
               },
               {
                 icon: mdiInstagram,
-                href: "https://www.instagram.com/lyden.official",
                 label: "Instagram",
-              },
-              {
-                icon: mdiLinkedin,
-                href: "https://www.linkedin.com/in/lyden-chai/",
-                label: "LinkedIn",
+                href: "https://www.instagram.com/lyden.official",
+                target: "_blank",
               },
               {
                 icon: mdiGithub,
-                href: "https://github.com/lydenchai",
                 label: "GitHub",
+                href: "https://github.com/lydenchai",
+                target: "_blank",
               },
             ].map(({ icon, href, label }) => (
               <motion.a

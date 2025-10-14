@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import {
-  Mail,
   Phone,
   MapPin,
   Send,
   Linkedin,
   Github,
   Instagram,
+  CheckCircle,
+  AlertCircle,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -18,6 +19,12 @@ const Contact = () => {
     message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -27,26 +34,38 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const subject = encodeURIComponent(
+        formData.subject || "Contact from Portfolio"
+      );
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      );
+      window.location.href = `mailto:lyden.chai@gmail.com?subject=${subject}&body=${body}`;
+
+      setSubmitStatus({
+        type: "success",
+        message: "Opening your email client...",
+      });
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message:
+          "Sorry, there was an error sending your message. Please try again.",
+      });
+      console.error("Error sending email:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
-    {
-      Icon: Mail,
-      title: "Email",
-      value: "lyden.chai@gmail.com",
-      href: "mailto:lyden.chai@gmail.com",
-    },
     {
       Icon: Phone,
       title: "Phone",
@@ -63,19 +82,22 @@ const Contact = () => {
 
   const socialLinks = [
     {
+      icon: Linkedin,
       platform: "LinkedIn",
       href: "https://www.linkedin.com/in/lydenchai/",
-      icon: Linkedin,
+      target: "_blank",
     },
     {
+      icon: Instagram,
       platform: "Instagram",
       href: "https://www.instagram.com/lydenchai/",
-      icon: Instagram,
+      target: "_blank",
     },
     {
+      icon: Github,
       platform: "GitHub",
       href: "https://github.com/lydenchai",
-      icon: Github,
+      target: "_blank",
     },
   ];
 
@@ -135,7 +157,10 @@ const Contact = () => {
                   className="flex items-center gap-3 sm:gap-4 text-gray-300 hover:text-white transition-colors duration-300 group"
                 >
                   <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center group-hover:shadow-lg group-hover:shadow-purple-500/25 transition-shadow duration-300">
-                    <Icon size={18} className="sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
+                    <Icon
+                      size={18}
+                      className="sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"
+                    />
                   </div>
                   <div>
                     <p className="font-semibold text-sm sm:text-base">
@@ -291,18 +316,52 @@ const Contact = () => {
                 />
               </motion.div>
 
+              {/* Status Message */}
+              {submitStatus.type && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`flex items-center gap-2 p-3 rounded-lg text-sm ${
+                    submitStatus.type === "success"
+                      ? "bg-green-500/20 text-green-300 border border-green-500/30"
+                      : "bg-red-500/20 text-red-300 border border-red-500/30"
+                  }`}
+                >
+                  {submitStatus.type === "success" ? (
+                    <CheckCircle size={16} />
+                  ) : (
+                    <AlertCircle size={16} />
+                  )}
+                  {submitStatus.message}
+                </motion.div>
+              )}
+
               <motion.button
                 type="submit"
+                disabled={isSubmitting}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer"
+                whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
+                whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
+                className={`w-full text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base ${
+                  isSubmitting
+                    ? "bg-gray-600 cursor-not-allowed"
+                    : "bg-gradient-to-r from-purple-600 to-pink-600 hover:shadow-lg hover:shadow-purple-500/25 cursor-pointer"
+                }`}
               >
-                <Send size={16} className="sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
-                Send Message
+                {isSubmitting ? (
+                  <>
+                    <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send size={16} className="sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
+                    Send Message
+                  </>
+                )}
               </motion.button>
             </form>
           </motion.div>

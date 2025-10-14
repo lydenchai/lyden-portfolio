@@ -1,27 +1,25 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, Instagram } from "lucide-react";
+import { Linkedin, Github, Instagram } from "lucide-react";
 
 const Footer = () => {
   const socialLinks = [
     {
-      platform: "Mail",
-      href: "mailto:lyden.chai@gmail.com",
-      icon: Mail,
-    },
-    {
+      icon: Linkedin,
       platform: "LinkedIn",
       href: "https://www.linkedin.com/in/lydenchai/",
-      icon: Linkedin,
+      target: "_blank",
     },
     {
+      icon: Instagram,
       platform: "Instagram",
       href: "https://www.instagram.com/lydenchai/",
-      icon: Instagram,
+      target: "_blank",
     },
     {
+      icon: Github,
       platform: "GitHub",
       href: "https://github.com/lydenchai",
-      icon: Github,
+      target: "_blank",
     },
   ];
   return (
