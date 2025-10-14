@@ -53,7 +53,6 @@ const Navbar = () => {
     { name: "About", href: "#about", section: "about" },
     { name: "Skills", href: "#skills", section: "skills" },
     { name: "Projects", href: "#projects", section: "projects" },
-    { name: "Contact", href: "#contact", section: "contact" },
   ];
 
   const handleNavClick = (href: string) => {
@@ -74,7 +73,7 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/90 backdrop-blur-sm shadow-lg" : "bg-transparent"
+        scrolled ? "bg-white/90 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6">
@@ -108,7 +107,7 @@ const Navbar = () => {
                   href={item.href}
                   className={`relative font-medium transition-all duration-300 px-2 py-1 lg:px-3 lg:py-2 text-sm lg:text-base ${
                     isActive
-                      ? "text-purple-600 bg-white/10 backdrop-blur-sm rounded-full"
+                      ? "text-purple-600 bg-white/10 backdrop-blur-md rounded-full"
                       : scrolled
                       ? "text-gray-700 hover:text-purple-600 hover:bg-purple-50/50 rounded-full"
                       : "text-gray-300 hover:text-white hover:bg-white/10 rounded-full"
@@ -137,12 +136,12 @@ const Navbar = () => {
               );
             })}
             <motion.button
-              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-1.5 lg:px-6 lg:py-2 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 text-sm lg:text-base"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-1.5 lg:px-6 lg:py-2 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 text-sm lg:text-base cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => handleNavClick("#contact")}
             >
-              Hire Me
+              Contact
             </motion.button>
           </div>
 
@@ -157,7 +156,11 @@ const Navbar = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
+            {isOpen ? (
+              <X size={20} className="sm:w-6 sm:h-6 lg:w-7 lg:h-7" />
+            ) : (
+              <Menu size={20} className="sm:w-6 sm:h-6 lg:w-7 lg:h-7" />
+            )}
           </motion.button>
         </div>
       </div>
@@ -170,7 +173,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden mx-4 mb-3 rounded-lg bg-white/95 backdrop-blur-sm border-t border-gray-200"
+            className="md:hidden mx-4 mb-3 rounded-lg bg-white/95 backdrop-blur-md border-t border-gray-200"
           >
             <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
               {navItems.map((item, index) => {
@@ -202,14 +205,14 @@ const Navbar = () => {
                 );
               })}
               <motion.button
-                className="w-full mt-3 sm:mt-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base"
+                className="w-full mt-3 sm:mt-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => handleNavClick("#contact")}
               >
-                Hire Me
+                Contact
               </motion.button>
             </div>
           </motion.div>

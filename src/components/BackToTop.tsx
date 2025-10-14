@@ -60,7 +60,7 @@ const BackToTop = () => {
           title="Back to top"
         >
           <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-            <ChevronUp size={20} className="sm:w-6 sm:h-6 group-hover:animate-bounce" />
+            <ChevronUp size={20} className="sm:w-6 sm:h-6 lg:w-7 lg:h-7 group-hover:animate-bounce" />
           </motion.div>
 
           {/* Animated background ring */}

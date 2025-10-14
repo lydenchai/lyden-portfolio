@@ -62,8 +62,12 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            <span className="text-gradient mb-3 sm:mb-4 lg:mb-6">Lyden CHAI</span>
-            <span className="text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">Frontend Developer</span>
+            <span className="text-gradient mb-3 sm:mb-4 lg:mb-6">
+              Lyden CHAI
+            </span>
+            <span className="text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+              Frontend Developer
+            </span>
           </motion.h1>
 
           <motion.p
@@ -102,7 +106,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Icon path={mdiDownload} size={0.7} className="text-current" />
+              <Icon path={mdiDownload} size={0.8} className="text-current" />
               Download CV
             </motion.a>
           </motion.div>
@@ -146,9 +150,9 @@ const Hero = () => {
               >
                 <Icon
                   path={icon}
-                  size={0.7}
+                  size={1}
                   color="white"
-                  className="sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 group-hover:scale-110 transition-transform duration-300"
+                  className="sm:w-6 sm:h-6 lg:w-10 lg:h-10 group-hover:scale-110 transition-transform duration-300"
                 />
                 <span className="sr-only">{label}</span>
               </motion.a>

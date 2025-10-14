@@ -8,6 +8,7 @@ import {
   mdiLanguageTypescript,
   mdiLanguageHtml5,
   mdiTailwind,
+  mdiPalette,
 } from "@mdi/js";
 
 const Skills = () => {
@@ -21,7 +22,7 @@ const Skills = () => {
         "Component-based framework for building scalable web applications",
     },
     {
-      name: "Vue.js",
+      name: "Vue",
       level: 65,
       icon: mdiVuejs,
       color: "#42b883",
@@ -66,8 +67,8 @@ const Skills = () => {
     {
       name: "UX/UI Design",
       level: 82,
-      icon: mdiTailwind,
-      color: "#38bdf8",
+      icon: mdiPalette,
+      color: "#a855f7",
       description: "Designing user-centric interfaces and experiences",
     },
   ];
@@ -115,13 +116,13 @@ const Skills = () => {
               {/* Content */}
               <div className="relative z-10 text-center">
                 <div
-                  className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 rounded-full flex items-center justify-center shadow-lg"
+                  className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mx-auto mb-3 sm:mb-4 rounded-full flex items-center justify-center shadow-lg"
                   style={{ backgroundColor: skill.color }}
                 >
                   <Icon
                     path={skill.icon}
-                    size={1}
-                    className="sm:w-6 sm:h-6"
+                    size={1.2}
+                    className="sm:w-6 sm:h-6 lg:w-10 lg:h-10"
                     color="white"
                   />
                 </div>
@@ -171,8 +172,9 @@ const Skills = () => {
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
               {[
                 "Vite",
-                "MySQL",
+                "Node.js",
                 "Laravel",
+                "MySQL",
                 "Socket.io",
                 "Chart.js",
                 "Material-UI",

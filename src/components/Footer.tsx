@@ -55,14 +55,14 @@ const Footer = () => {
                   href={platform.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700 transition-all duration-300"
+                  className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700 transition-all duration-300"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   title={platform.platform}
                 >
                   <IconComponent
                     size={16}
-                    className="sm:w-5 sm:h-5 text-white group-hover:scale-110 transition-transform duration-300"
+                    className="sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white group-hover:scale-110 transition-transform duration-300"
                   />
                 </motion.a>
               );
@@ -71,8 +71,7 @@ const Footer = () => {
 
           <div className="border-t border-gray-800 pt-6 sm:pt-8">
             <p className="text-gray-400 text-xs sm:text-sm px-4">
-              © {new Date().getFullYear()} Lyden. All rights reserved. Built
-              with React & Tailwind CSS.
+              © {new Date().getFullYear()} Lyden CHAI. All rights reserved.
             </p>
           </div>
         </motion.div>

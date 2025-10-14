@@ -4,7 +4,7 @@ import { Code, Palette, Rocket, Zap, Users, Target } from "lucide-react";
 const About = () => {
   const skills = [
     { name: "Angular", level: 80, color: "from-red-600 to-red-500" }, // Angular Red
-    { name: "Vue.js", level: 65, color: "from-green-500 to-green-400" }, // Vue Green
+    { name: "Vue", level: 65, color: "from-green-500 to-green-400" }, // Vue Green
     { name: "React", level: 55, color: "from-cyan-400 to-blue-400" }, // React Blue
     { name: "JavaScript", level: 85, color: "from-yellow-400 to-yellow-300" }, // JavaScript Yellow
     { name: "TypeScript", level: 90, color: "from-blue-600 to-blue-500" }, // TypeScript Blue
@@ -46,9 +46,9 @@ const About = () => {
     },
     {
       Icon: Target,
-      title: "Project Management",
+      title: "Quality Development",
       description:
-        "Leading projects from conception to deployment with attention to detail.",
+        "Writing clean, maintainable code and delivering projects with attention to detail.",
     },
   ];
 
@@ -81,24 +81,27 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="px-4 sm:px-0"
           >
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">My Story</h3>
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
+              My Story
+            </h3>
             <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
-              My expertise lies in developing comprehensive management systems
-              for government and enterprise clients, where I've
-              built multiple enterprise applications including HR, Accounting,
-              Healthcare Benefits, Hospital Management, and Inspection systems.
+              I'm a passionate <strong>frontend developer</strong> specializing
+              in creating modern, responsive web applications. With 3+ years of
+              experience, I focus on building user-centric interfaces that
+              provide exceptional experiences across all devices and platforms.
             </p>
             <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
-              I specialize in Angular and Vue.js frameworks, TypeScript, and modern
-              full-stack development. My experience includes working with
-              complex business logic, large-scale data management, and building
-              secure, compliant applications for government and healthcare
-              sectors.
+              As a <strong>frontend developer</strong>, I excel in Angular,
+              Vue.js, and React frameworks, combined with TypeScript and modern
+              CSS solutions like Tailwind CSS. I transform UI/UX designs into
+              interactive, performant web applications with clean, scalable code
+              architecture.
             </p>
             <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-              When I'm not coding, you can find me exploring new technologies,
-              contributing to open source projects, or sharing knowledge with
-              the developer community.
+              My journey as a <strong>frontend developer</strong> involves
+              continuous learning of emerging technologies, staying updated with
+              the latest web standards, and contributing to the ever-evolving
+              frontend development ecosystem.
             </p>
           </motion.div>
 
@@ -124,7 +127,9 @@ const About = () => {
                   <span className="text-sm sm:text-base font-semibold text-gray-700">
                     {skill.name}
                   </span>
-                  <span className="text-xs sm:text-sm text-gray-500">{skill.level}%</span>
+                  <span className="text-xs sm:text-sm text-gray-500">
+                    {skill.level}%
+                  </span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 sm:h-3">
                   <motion.div
@@ -161,13 +166,17 @@ const About = () => {
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
                 className="bg-white p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-4 sm:mb-6">
-                  <Icon size={24} className="sm:w-8 sm:h-8 text-white" />
+                <div className="flex items-center gap-4 sm:gap-6 mb-4 sm:mb-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                    <Icon size={20} className="sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
+                  </div>
+                  <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
+                    {title}
+                  </h4>
                 </div>
-                <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
-                  {title}
-                </h4>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{description}</p>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                  {description}
+                </p>
               </motion.div>
             ))}
           </div>

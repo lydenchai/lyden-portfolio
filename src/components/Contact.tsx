@@ -112,7 +112,9 @@ const Contact = () => {
             className="space-y-6 sm:space-y-8"
           >
             <div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">Let's Talk</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
+                Let's Talk
+              </h3>
               <p className="text-gray-300 mb-6 sm:mb-8 text-sm sm:text-base">
                 I'm currently available for freelance projects and full-time
                 opportunities. Whether you have a project in mind or just want
@@ -132,11 +134,13 @@ const Contact = () => {
                   whileHover={{ x: 10 }}
                   className="flex items-center gap-3 sm:gap-4 text-gray-300 hover:text-white transition-colors duration-300 group"
                 >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center group-hover:shadow-lg group-hover:shadow-purple-500/25 transition-shadow duration-300">
-                    <Icon size={18} className="sm:w-5 sm:h-5 text-white" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center group-hover:shadow-lg group-hover:shadow-purple-500/25 transition-shadow duration-300">
+                    <Icon size={18} className="sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-sm sm:text-base">{title}</p>
+                    <p className="font-semibold text-sm sm:text-base">
+                      {title}
+                    </p>
                     <p className="text-xs sm:text-sm">{value}</p>
                   </div>
                 </motion.a>
@@ -150,7 +154,9 @@ const Contact = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="mt-8 sm:mt-12"
             >
-              <h4 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Follow Me</h4>
+              <h4 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">
+                Follow Me
+              </h4>
               <div className="flex space-x-3 sm:space-x-4">
                 {socialLinks.map((platform) => {
                   const IconComponent = platform.icon;
@@ -160,14 +166,14 @@ const Contact = () => {
                       href={platform.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 sm:w-12 sm:h-12 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl flex items-center justify-center text-gray-300 hover:text-white hover:bg-white/20 transition-all duration-300 group"
+                      className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl flex items-center justify-center text-gray-300 hover:text-white hover:bg-white/20 transition-all duration-300 group"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                       title={platform.platform}
                     >
                       <IconComponent
                         size={16}
-                        className="sm:w-5 sm:h-5 text-white group-hover:scale-110 transition-transform duration-300"
+                        className="sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white group-hover:scale-110 transition-transform duration-300"
                       />
                     </motion.a>
                   );
@@ -293,9 +299,9 @@ const Contact = () => {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base"
+                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer"
               >
-                <Send size={16} className="sm:w-5 sm:h-5" />
+                <Send size={16} className="sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
                 Send Message
               </motion.button>
             </form>
