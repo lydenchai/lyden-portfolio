@@ -3,8 +3,8 @@ import Icon from "@mdi/react";
 import { mdiGithub, mdiLinkedin, mdiInstagram, mdiDownload } from "@mdi/js";
 
 // Import CV
-import cvFile from "../assets/cv/curriculum-vitae.pdf";
-import myPhoto from "../assets/imgs/photo.jpeg";
+import cvFile from "../../public/cv/curriculum-vitae.pdf";
+import myPhoto from "../../public/images/photo.jpeg";
 
 const Hero = () => {
   return (

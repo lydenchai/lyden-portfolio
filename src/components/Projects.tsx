@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 
 // Import project images
-import hrImg from "../assets/imgs/hr.png";
-import accImg from "../assets/imgs/acc.png";
-import benefitImg from "../assets/imgs/benefit.png";
-import inspectionImg from "../assets/imgs/inspection.png";
-import hospitalImg from "../assets/imgs/hospital.png";
-import rehabilitationImg from "../assets/imgs/rehabilitation.png";
-import goAheadImg from "../assets/imgs/go-ahead.png";
+import hrImg from "../../public/images/hr.png";
+import accImg from "../../public/images/acc.png";
+import benefitImg from "../../public/images/benefit.png";
+import inspectionImg from "../../public/images/inspection.png";
+import hospitalImg from "../../public/images/hospital.png";
+import rehabilitationImg from "../../public/images/rehabilitation.png";
+import goAheadImg from "../../public/images/go-ahead.png";
 
 const Projects = () => {
   const projects = [
