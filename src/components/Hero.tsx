@@ -8,19 +8,30 @@ import myPhoto from "../../public/images/photo.jpeg";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-indigo-900 via-blue-800 to-purple-900">
-      {/* Background animated elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -inset-10 opacity-50">
+  <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-indigo-900 via-blue-900 to-purple-900">
+      {/* Animated gradient overlay */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <motion.div
+          className="w-full h-full"
+          style={{
+            background: "radial-gradient(ellipse at 50% 30%, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0) 70%)"
+          }}
+          animate={{
+            opacity: [0.7, 1, 0.7],
+            scale: [1, 1.05, 1],
+          }}
+          transition={{ duration: 8, repeat: Infinity }}
+        />
+        <div className="absolute -inset-10 opacity-40">
           {[...Array(20)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute bg-white rounded-full"
+              className="absolute bg-white/30 rounded-full blur-sm"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                width: `${Math.random() * 4 + 1}px`,
-                height: `${Math.random() * 4 + 1}px`,
+                width: `${Math.random() * 6 + 2}px`,
+                height: `${Math.random() * 6 + 2}px`,
               }}
               animate={{
                 y: [-20, -100, -20],
@@ -42,12 +53,16 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="h-32 w-32 sm:h-40 sm:w-40 lg:h-48 lg:w-48 xl:h-56 xl:w-56 m-auto mb-6 sm:mb-8 rounded-full bg-gradient-to-r bg-white p-1">
+          <div className="relative h-32 w-32 sm:h-40 sm:w-40 lg:h-48 lg:w-48 xl:h-56 xl:w-56 m-auto mb-6 sm:mb-8">
+            {/* Radial glow behind profile image */}
+            <div className="absolute inset-0 rounded-full bg-gradient-radial from-blue-400/30 via-purple-500/20 to-transparent blur-2xl scale-110"></div>
+            <div className="relative rounded-full bg-gradient-to-r bg-white p-1 h-full w-full">
             <img
               src={myPhoto}
               alt="Profile"
               className="w-full h-full rounded-full object-cover"
             />
+            </div>
           </div>
 
           <motion.h1

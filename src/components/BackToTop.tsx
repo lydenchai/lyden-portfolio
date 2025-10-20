@@ -55,7 +55,7 @@ const BackToTop = () => {
           }}
           whileTap={{ scale: 0.95 }}
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 z-50 p-3 sm:p-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group back-to-top-pulse"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 z-50 p-3 sm:p-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group back-to-top-pulse"
           aria-label="Back to top"
           title="Back to top"
         >
@@ -65,7 +65,7 @@ const BackToTop = () => {
 
           {/* Animated background ring */}
           <motion.div
-            className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-20"
+            className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-20"
             initial={false}
             whileHover={{
               scale: [1, 1.2, 1],

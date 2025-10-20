@@ -104,9 +104,46 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-indigo-900 via-blue-800 to-purple-900"
+  className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-indigo-900 via-blue-900 to-purple-900 relative overflow-hidden"
     >
-      <div className="container mx-auto px-4 sm:px-6">
+      {/* Animated gradient overlay */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <motion.div
+          className="w-full h-full"
+          style={{
+            background: "radial-gradient(ellipse at 50% 30%, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0) 70%)"
+          }}
+          animate={{
+            opacity: [0.7, 1, 0.7],
+            scale: [1, 1.05, 1],
+          }}
+          transition={{ duration: 8, repeat: Infinity }}
+        />
+        <div className="absolute -inset-10 opacity-40">
+          {[...Array(16)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute bg-white/30 rounded-full blur-sm"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                width: `${Math.random() * 6 + 2}px`,
+                height: `${Math.random() * 6 + 2}px`,
+              }}
+              animate={{
+                y: [-20, -100, -20],
+                opacity: [0, 1, 0],
+              }}
+              transition={{
+                duration: 3 + Math.random() * 2,
+                repeat: Infinity,
+                delay: Math.random() * 2,
+              }}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -213,7 +250,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="glass-effect rounded-2xl p-4 sm:p-6 lg:p-8"
+            className="rounded-2xl p-4 sm:p-6 lg:p-8 bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl shadow-purple-900/20"
           >
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">
               Send Me a Message

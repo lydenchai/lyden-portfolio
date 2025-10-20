@@ -136,7 +136,7 @@ const Navbar = () => {
               );
             })}
             <motion.button
-              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-1.5 lg:px-6 lg:py-2 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 text-sm lg:text-base cursor-pointer"
+              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-1.5 lg:px-6 lg:py-2 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 text-sm lg:text-base cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => handleNavClick("#contact")}
@@ -205,7 +205,7 @@ const Navbar = () => {
                 );
               })}
               <motion.button
-                className="w-full mt-3 sm:mt-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base cursor-pointer"
+                className="w-full mt-3 sm:mt-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
