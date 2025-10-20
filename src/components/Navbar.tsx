@@ -125,7 +125,7 @@ const Navbar = () => {
                   {/* Active indicator */}
                   {isActive && (
                     <motion.div
-                      className="from-purple-600 to-pink-600 bg-purple-50/50 rounded-full"
+                      className="from-indigo-900 to-blue-800 bg-purple-50/50 rounded-full"
                       layoutId="activeIndicator"
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
@@ -195,7 +195,7 @@ const Navbar = () => {
                     <span>{item.name}</span>
                     {isActive && (
                       <motion.div
-                        className="w-2 h-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full"
+                        className="w-2 h-2 bg-gradient-to-r from-indigo-900 to-blue-800 rounded-full"
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ duration: 0.3 }}

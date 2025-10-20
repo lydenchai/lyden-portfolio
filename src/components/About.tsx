@@ -167,7 +167,7 @@ const About = () => {
                 className="bg-white p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
               >
                 <div className="flex items-center gap-4 sm:gap-6 mb-4 sm:mb-6">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-r from-indigo-900 to-blue-800 rounded-full flex items-center justify-center mb-4 sm:mb-6">
                     <Icon size={20} className="sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
                   </div>
                   <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">

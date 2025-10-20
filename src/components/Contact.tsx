@@ -104,7 +104,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"
+      className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-indigo-900 via-blue-800 to-purple-900"
     >
       <div className="container mx-auto px-4 sm:px-6">
         <motion.div
