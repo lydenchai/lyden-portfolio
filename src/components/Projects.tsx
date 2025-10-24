@@ -105,7 +105,7 @@ const Projects = () => {
   const otherProjects = projects.filter((project) => !project.featured);
 
   return (
-    <section id="projects" className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+    <section id="projects" className="py-12 sm:py-16 lg:py-20 bg-[#f5f5f7]">
       <div className="container mx-auto sm:px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -135,7 +135,7 @@ const Projects = () => {
           <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
             Featured Projects
           </h3>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 ">
             {featuredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -144,7 +144,7 @@ const Projects = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 whileHover={{ y: -10 }}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-2xl overflow-hidden duration-300"
               >
                 <div className="relative overflow-hidden">
                   <img

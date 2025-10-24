@@ -105,7 +105,7 @@ const Skills = () => {
                 scale: 1.05,
                 boxShadow: `0 20px 40px ${skill.color}20`,
               }}
-              className="group relative bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-sm hover:shadow-md transition-shadow duration-200 border border-gray-100"
+              className="group relative bg-[#f7f9fb] rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-sm hover:shadow-md transition-shadow duration-200 border border-gray-100"
             >
               {/* Gradient background on hover */}
               <div

@@ -104,7 +104,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-indigo-900 via-blue-900 to-purple-900 relative overflow-hidden"
+      className="py-12 sm:py-16 lg:py-20 bg-black relative overflow-hidden"
     >
       {/* Animated gradient overlay */}
       <div className="absolute inset-0 pointer-events-none z-0">
@@ -251,7 +251,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="rounded-2xl p-4 sm:p-6 lg:p-8 bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl shadow-purple-900/20"
+            className="rounded-2xl p-4 sm:p-6 lg:p-8 bg-white/10 backdrop-blur-xl border border-white/20"
           >
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">
               Send Me a Message

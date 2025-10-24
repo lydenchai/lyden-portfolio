@@ -56,22 +56,22 @@ const About = () => {
     <section id="about" className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="container mx-auto sm:px-4 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-10 sm:mb-12 lg:mb-16"
+          transition={{ duration: 0.7 }}
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
-            About <span className="text-gradient">Me</span>
+          <h2 className="inline-block text-5xl sm:text-6xl font-light text-gray-900 mb-2 tracking-tight">
+            About Me
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-xs sm:max-w-2xl lg:max-w-3xl mx-auto px-4 sm:px-0 leading-relaxed">
-            I'm a passionate frontend developer with 3+ years of experience
-            building enterprise-level applications for government institutions
-            and modern businesses. I specialize in creating scalable, secure,
-            and user-friendly solutions.
+          <div className="w-16 h-1 mx-auto bg-blue-200 rounded-full mb-6" />
+          <div className="text-base sm:text-lg text-blue-600 font-medium mb-4">Crafting digital experiences with clarity and care</div>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            I’m a frontend developer focused on clean code, beautiful interfaces, and seamless user experiences. I love turning ideas into elegant, accessible products.
           </p>
         </motion.div>
+        <div className="w-full h-px bg-gray-100 my-12" />
 
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 mb-12 sm:mb-16 lg:mb-20">
           <motion.div
@@ -155,7 +155,7 @@ const About = () => {
           <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-8 sm:mb-10 lg:mb-12">
             What I Do
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map(({ Icon, title, description }, index) => (
               <motion.div
                 key={title}
@@ -164,10 +164,10 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                className="bg-white p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                className="p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-[#f5f5f7] hover:shadow-xl transition-shadow duration-300"
               >
                 <div className="flex items-center gap-4 sm:gap-6 mb-4 sm:mb-6">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-r from-indigo-900 to-blue-800 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-blue-600 rounded-full flex items-center justify-center mb-4 sm:mb-6">
                     <Icon size={20} className="sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
                   </div>
                   <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">

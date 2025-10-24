@@ -4,7 +4,7 @@ import { mdiGithub, mdiLinkedin, mdiInstagram, mdiDownload } from "@mdi/js";
 
 // Import CV
 import cvFile from "../../public/cv/curriculum-vitae.pdf";
-import myPhoto from "../../public/images/photo.jpeg";
+import myPhoto from "../../public/images/my-photo.jpeg";
 
 const Hero = () => {
   return (
@@ -72,7 +72,7 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            <span className="text-gradient mb-3 sm:mb-4 lg:mb-6 line-height-1 bg-gradient-to-r from-blue-600 to-pink-600 ">
+            <span className="text-gradient mb-3 sm:mb-4 lg:mb-6 line-height-1 bg-gradient-to-r from-blue-500 to-pink-400">
               Lyden CHAI
             </span>
             <span className="text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
