@@ -180,8 +180,8 @@ const About = () => {
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
                 className="p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-[#f5f5f7]"
               >
-                <div className="flex items-center gap-4 sm:gap-6 mb-4 sm:mb-6">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-blue-600 rounded-full flex items-center justify-center">
+                <div className="flex items-center gap-4 sm:gap-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-blue-600 rounded-full flex items-center justify-center mb-4 sm:mb-6">
                     <Icon
                       size={20}
                       className="sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white"
