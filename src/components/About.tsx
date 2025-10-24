@@ -60,18 +60,22 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-16 px-4 sm:px-0"
         >
-          <h2 className="inline-block text-5xl sm:text-6xl font-light text-gray-900 mb-2 tracking-tight">
+          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
             About Me
-          </h2>
-          <div className="w-16 h-1 mx-auto bg-blue-200 rounded-full mb-6" />
-          <div className="text-base sm:text-lg text-blue-600 font-medium mb-4">Crafting digital experiences with clarity and care</div>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            I’m a frontend developer focused on clean code, beautiful interfaces, and seamless user experiences. I love turning ideas into elegant, accessible products.
+          </h3>
+          <div className="w-20 h-1 mx-auto bg-blue-200 rounded-full mb-6" />
+          <div className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-blue-600 font-medium mb-4">
+            Crafting digital experiences with clarity and care
+          </div>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            I’m a frontend developer focused on clean code, beautiful
+            interfaces, and seamless user experiences. I love turning ideas into
+            elegant, accessible products.
           </p>
         </motion.div>
-        <div className="w-full h-px bg-gray-100 my-12" />
+        <div className="w-full h-px bg-gray-100 my-16 sm:my-8" />
 
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 mb-12 sm:mb-16 lg:mb-20">
           <motion.div
@@ -168,7 +172,10 @@ const About = () => {
               >
                 <div className="flex items-center gap-4 sm:gap-6 mb-4 sm:mb-6">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-blue-600 rounded-full flex items-center justify-center mb-4 sm:mb-6">
-                    <Icon size={20} className="sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
+                    <Icon
+                      size={20}
+                      className="sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white"
+                    />
                   </div>
                   <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
                     {title}
