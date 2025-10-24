@@ -73,7 +73,9 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/90 backdrop-blur-md shadow-lg" : "bg-transparent"
+        scrolled
+          ? "bg-white/60 backdrop-blur-md border border-gray-300 shadow-lg"
+          : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6">
@@ -107,7 +109,7 @@ const Navbar = () => {
                   href={item.href}
                   className={`relative font-medium transition-all duration-300 px-2 py-1 lg:px-3 lg:py-2 text-sm lg:text-base ${
                     isActive
-                      ? "text-purple-600 bg-white/10 backdrop-blur-md rounded-full"
+                      ? "text-purple-600 bg-white backdrop-blur-md rounded-full"
                       : scrolled
                       ? "text-gray-700 hover:text-purple-600 hover:bg-purple-50/50 rounded-full"
                       : "text-gray-300 hover:text-white hover:bg-white/10 rounded-full"

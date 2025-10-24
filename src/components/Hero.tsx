@@ -8,13 +8,14 @@ import myPhoto from "../../public/images/photo.jpeg";
 
 const Hero = () => {
   return (
-  <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-indigo-900 via-blue-900 to-purple-900">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black">
       {/* Animated gradient overlay */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <motion.div
           className="w-full h-full"
           style={{
-            background: "radial-gradient(ellipse at 50% 30%, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0) 70%)"
+            background:
+              "radial-gradient(ellipse at 50% 30%, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0) 70%)",
           }}
           animate={{
             opacity: [0.7, 1, 0.7],
@@ -57,11 +58,11 @@ const Hero = () => {
             {/* Radial glow behind profile image */}
             <div className="absolute inset-0 rounded-full bg-gradient-radial from-blue-400/30 via-purple-500/20 to-transparent blur-2xl scale-110"></div>
             <div className="relative rounded-full bg-gradient-to-r bg-white p-1 h-full w-full">
-            <img
-              src={myPhoto}
-              alt="Profile"
-              className="w-full h-full rounded-full object-cover"
-            />
+              <img
+                src={myPhoto}
+                alt="Profile"
+                className="w-full h-full rounded-full object-cover"
+              />
             </div>
           </div>
 
@@ -71,7 +72,7 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            <span className="text-gradient mb-3 sm:mb-4 lg:mb-6 line-height-1">
+            <span className="text-gradient mb-3 sm:mb-4 lg:mb-6 line-height-1 bg-gradient-to-r from-blue-600 to-pink-600 ">
               Lyden CHAI
             </span>
             <span className="text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
@@ -151,14 +152,14 @@ const Hero = () => {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl sm:rounded-2xl flex items-center justify-center hover:bg-white/20 transition-all duration-500 hover:scale-110 hover:shadow-xl"
+                className="group relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-white/60 backdrop-blur-md border border-gray-300 rounded-xl sm:rounded-2xl flex items-center justify-center hover:bg-white transition-all duration-500 hover:scale-110 hover:shadow-xl"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Icon
                   path={icon}
                   size={1}
-                  color="white"
+                  color="#222"
                   className="sm:w-6 sm:h-6 lg:w-10 lg:h-10 group-hover:scale-110 transition-transform duration-300"
                 />
                 <span className="sr-only">{label}</span>

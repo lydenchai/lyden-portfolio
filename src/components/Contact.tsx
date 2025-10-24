@@ -104,14 +104,15 @@ const Contact = () => {
   return (
     <section
       id="contact"
-  className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-indigo-900 via-blue-900 to-purple-900 relative overflow-hidden"
+      className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-indigo-900 via-blue-900 to-purple-900 relative overflow-hidden"
     >
       {/* Animated gradient overlay */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <motion.div
           className="w-full h-full"
           style={{
-            background: "radial-gradient(ellipse at 50% 30%, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0) 70%)"
+            background:
+              "radial-gradient(ellipse at 50% 30%, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0) 70%)",
           }}
           animate={{
             opacity: [0.7, 1, 0.7],
@@ -193,7 +194,7 @@ const Contact = () => {
                   whileHover={{ x: 10 }}
                   className="flex items-center gap-3 sm:gap-4 text-gray-300 hover:text-white transition-colors duration-300 group"
                 >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center group-hover:shadow-lg group-hover:shadow-purple-500/25 transition-shadow duration-300">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-white/60 backdrop-blur-md border border-gray-300 rounded-full flex items-center justify-center group-hover:shadow-lg transition-shadow duration-300">
                     <Icon
                       size={18}
                       className="sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"
