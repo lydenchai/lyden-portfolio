@@ -57,7 +57,7 @@ const Hero = () => {
           <div className="relative h-32 w-32 sm:h-40 sm:w-40 lg:h-48 lg:w-48 xl:h-56 xl:w-56 m-auto mb-6 sm:mb-8">
             {/* Radial glow behind profile image */}
             <div className="absolute inset-0 rounded-full bg-gradient-radial from-blue-400/30 via-purple-500/20 to-transparent blur-2xl scale-110"></div>
-            <div className="relative rounded-full bg-gradient-to-r bg-white p-1 h-full w-full">
+            <div className="relative rounded-full bg-gradient-to-r from-gray-100 to-white p-1 h-full w-full">
               <img
                 src={myPhoto}
                 alt="Profile"
@@ -67,12 +67,12 @@ const Hero = () => {
           </div>
 
           <motion.h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl flex flex-col font-bold text-white mb-4 sm:mb-6"
+            className="flex flex-col font-bold text-white mb-4 sm:mb-6"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            <span className="text-gradient mb-3 sm:mb-4 lg:mb-6 line-height-1 bg-gradient-to-r from-blue-500 to-pink-400">
+            <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gradient mb-2">
               Lyden CHAI
             </span>
             <span className="text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
@@ -86,9 +86,11 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            Crafting exceptional digital experiences with modern web
-            technologies. Passionate about creating intuitive, performant, and
-            beautiful user interfaces.
+            I design and build{" "}
+            <strong>modern, responsive web interfaces</strong> that combine
+            aesthetics with functionality. Passionate about delivering smooth,
+            intuitive, and high-performance digital experiences that truly
+            connect with users.
           </motion.p>
 
           <motion.div
@@ -109,6 +111,7 @@ const Hero = () => {
             >
               View My Work
             </motion.button>
+
             <motion.a
               href={cvFile}
               download="Lyden_Chai_CV.pdf"
@@ -132,19 +135,16 @@ const Hero = () => {
                 icon: mdiLinkedin,
                 label: "LinkedIn",
                 href: "https://www.linkedin.com/in/lyden-chai/",
-                target: "_blank",
               },
               {
                 icon: mdiInstagram,
                 label: "Instagram",
                 href: "https://www.instagram.com/lyden.official",
-                target: "_blank",
               },
               {
                 icon: mdiGithub,
                 label: "GitHub",
                 href: "https://github.com/lydenchai",
-                target: "_blank",
               },
             ].map(({ icon, href, label }) => (
               <motion.a

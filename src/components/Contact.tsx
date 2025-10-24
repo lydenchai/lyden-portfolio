@@ -194,7 +194,7 @@ const Contact = () => {
                   whileHover={{ x: 10 }}
                   className="flex items-center gap-3 sm:gap-4 text-gray-300 hover:text-white transition-colors duration-300 group"
                 >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-white/60 backdrop-blur-md border border-gray-300 rounded-full flex items-center justify-center group-hover:shadow-lg transition-shadow duration-300">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full flex items-center justify-center group-hover:shadow-lg transition-shadow duration-300">
                     <Icon
                       size={18}
                       className="sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white"
@@ -386,7 +386,7 @@ const Contact = () => {
                 className={`w-full text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base ${
                   isSubmitting
                     ? "bg-gray-600 cursor-not-allowed"
-                    : "bg-gradient-to-r from-purple-600 to-pink-600 hover:shadow-lg hover:shadow-purple-500/25 cursor-pointer"
+                    : "bg-blue-600 hover:shadow-lg hover:shadow-blue-500/25 cursor-pointer"
                 }`}
               >
                 {isSubmitting ? (

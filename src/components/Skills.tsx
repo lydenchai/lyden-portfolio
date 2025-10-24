@@ -105,7 +105,7 @@ const Skills = () => {
                 scale: 1.05,
                 boxShadow: `0 20px 40px ${skill.color}20`,
               }}
-              className="group relative bg-[#f7f9fb] rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-sm hover:shadow-md transition-shadow duration-200 border border-gray-100"
+              className="group relative bg-[#f7f9fb] rounded-xl sm:rounded-2xl p-4 sm:p-6"
             >
               {/* Gradient background on hover */}
               <div
@@ -165,7 +165,7 @@ const Skills = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-10 sm:mt-12 lg:mt-16 text-center px-4 sm:px-0"
         >
-          <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto">
+          <div className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl sm:rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto">
             <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
               Additional Technologies
             </h3>

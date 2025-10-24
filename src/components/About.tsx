@@ -55,6 +55,7 @@ const About = () => {
   return (
     <section id="about" className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="container mx-auto sm:px-4 lg:px-8">
+        {/* ABOUT INTRO */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -67,17 +68,21 @@ const About = () => {
           </h3>
           <div className="w-20 h-1 mx-auto bg-blue-200 rounded-full mb-6" />
           <div className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-blue-600 font-medium mb-4">
-            Crafting digital experiences with clarity and care
+            Crafting digital experiences with clarity and purpose
           </div>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            I’m a frontend developer focused on clean code, beautiful
-            interfaces, and seamless user experiences. I love turning ideas into
-            elegant, accessible products.
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            I'm a <strong>frontend developer</strong> who's passionate about
+            creating clean, intuitive, and visually engaging web experiences. I
+            turn ideas into functional, accessible, and user-friendly products
+            that merge design aesthetics with technical precision.
           </p>
         </motion.div>
-        <div className="w-full h-px bg-gray-100 my-16 sm:my-8" />
 
+        <div className="w-full h-px bg-gray-100 my-10 sm:my-8" />
+
+        {/* STORY + SKILLS */}
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 mb-12 sm:mb-16 lg:mb-20">
+          {/* MY STORY */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -89,26 +94,30 @@ const About = () => {
               My Story
             </h3>
             <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
-              I'm a passionate <strong>frontend developer</strong> specializing
-              in creating modern, responsive web applications. With 3+ years of
-              experience, I focus on building user-centric interfaces that
-              provide exceptional experiences across all devices and platforms.
+              I'm a dedicated <strong>frontend developer</strong> with over 3
+              years of hands-on experience crafting modern, responsive, and
+              user-focused web applications. I'm driven by a desire to create
+              digital products that not only look great but also deliver
+              exceptional usability across all devices.
             </p>
             <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
-              As a <strong>frontend developer</strong>, I excel in Angular,
-              Vue.js, and React frameworks, combined with TypeScript and modern
-              CSS solutions like Tailwind CSS. I transform UI/UX designs into
-              interactive, performant web applications with clean, scalable code
-              architecture.
+              My core expertise lies in <strong>Angular</strong>,{" "}
+              <strong>Vue.js</strong>, and <strong>React</strong>, combined with{" "}
+              <strong>TypeScript</strong> and
+              <strong>Tailwind CSS</strong>. I focus on writing scalable,
+              maintainable code that brings design systems to life through
+              interactive and high-performance interfaces.
             </p>
             <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-              My journey as a <strong>frontend developer</strong> involves
-              continuous learning of emerging technologies, staying updated with
-              the latest web standards, and contributing to the ever-evolving
-              frontend development ecosystem.
+              Beyond coding, I'm passionate about continuous growth — exploring
+              new technologies, adopting modern best practices, and contributing
+              to the ever-evolving frontend ecosystem. Every project I take on
+              is an opportunity to learn, innovate, and make an impact through
+              thoughtful design and development.
             </p>
           </motion.div>
 
+          {/* TECHNICAL SKILLS */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -149,6 +158,7 @@ const About = () => {
           </motion.div>
         </div>
 
+        {/* WHAT I DO */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -168,10 +178,10 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                className="p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-[#f5f5f7] hover:shadow-xl transition-shadow duration-300"
+                className="p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-[#f5f5f7]"
               >
                 <div className="flex items-center gap-4 sm:gap-6 mb-4 sm:mb-6">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-blue-600 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-blue-600 rounded-full flex items-center justify-center">
                     <Icon
                       size={20}
                       className="sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white"
