@@ -6,13 +6,13 @@ const Footer = () => {
     {
       icon: Linkedin,
       platform: "LinkedIn",
-      href: "https://www.linkedin.com/in/lydenchai/",
+      href: "https://www.linkedin.com/in/lyden-chai/",
       target: "_blank",
     },
     {
       icon: Instagram,
       platform: "Instagram",
-      href: "https://www.instagram.com/lydenchai/",
+      href: "https://www.instagram.com/lyden.official/",
       target: "_blank",
     },
     {
@@ -53,7 +53,7 @@ const Footer = () => {
                   href={platform.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700 transition-all duration-300"
+                  className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full flex items-center justify-center group-hover:shadow-lg transition-shadow duration-300"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   title={platform.platform}
@@ -67,7 +67,7 @@ const Footer = () => {
             })}
           </div>
 
-          <div className="border-t border-gray-800 pt-6 sm:pt-8">
+          <div className="border-t border-white/10 pt-6 sm:pt-8">
             <p className="text-gray-400 text-xs sm:text-sm px-4">
               © {new Date().getFullYear()} Lyden CHAI. All rights reserved.
             </p>

@@ -84,13 +84,13 @@ const Contact = () => {
     {
       icon: Linkedin,
       platform: "LinkedIn",
-      href: "https://www.linkedin.com/in/lydenchai/",
+      href: "https://www.linkedin.com/in/lyden-chai/",
       target: "_blank",
     },
     {
       icon: Instagram,
       platform: "Instagram",
-      href: "https://www.instagram.com/lydenchai/",
+      href: "https://www.instagram.com/lyden.official/",
       target: "_blank",
     },
     {
