@@ -87,10 +87,9 @@ const Hero = () => {
             transition={{ delay: 0.6, duration: 0.8 }}
           >
             I design and build{" "}
-            <strong>modern, responsive web interfaces</strong> that combine
-            aesthetics with functionality. Passionate about delivering smooth,
-            intuitive, and high-performance digital experiences that truly
-            connect with users.
+            <strong>modern, responsive web interfaces</strong> that look great
+            and work smoothly. I focus on creating fast, easy-to-use digital
+            experiences that connect with people.
           </motion.p>
 
           <motion.div

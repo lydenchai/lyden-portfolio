@@ -74,7 +74,7 @@ const About = () => {
             I'm a <strong>frontend developer</strong> who's passionate about
             creating clean, intuitive, and visually engaging web experiences. I
             turn ideas into functional, accessible, and user-friendly products
-            that merge design aesthetics with technical precision.
+            that blend great design with solid code.
           </p>
         </motion.div>
 
@@ -94,26 +94,24 @@ const About = () => {
               My Story
             </h3>
             <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
-              I'm a dedicated <strong>frontend developer</strong> with over 3
-              years of hands-on experience crafting modern, responsive, and
-              user-focused web applications. I'm driven by a desire to create
-              digital products that not only look great but also deliver
-              exceptional usability across all devices.
+              I'm a passionate <strong>frontend developer</strong> with over 3
+              years of experience building modern, responsive, and user-friendly
+              web applications. I love creating products that look great and
+              work seamlessly on any device.
             </p>
             <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
-              My core expertise lies in <strong>Angular</strong>,{" "}
-              <strong>Vue.js</strong>, and <strong>React</strong>, combined with{" "}
-              <strong>TypeScript</strong> and
-              <strong>Tailwind CSS</strong>. I focus on writing scalable,
-              maintainable code that brings design systems to life through
-              interactive and high-performance interfaces.
+              I specialize in <strong>Angular</strong>, <strong>Vue.js</strong>,
+              and
+              <strong>React</strong>, along with <strong>TypeScript</strong> and
+              <strong>Tailwind CSS</strong>. My focus is on writing clean,
+              scalable code and bringing designs to life through smooth,
+              high-performance interfaces.
             </p>
             <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-              Beyond coding, I'm passionate about continuous growth — exploring
-              new technologies, adopting modern best practices, and contributing
-              to the ever-evolving frontend ecosystem. Every project I take on
-              is an opportunity to learn, innovate, and make an impact through
-              thoughtful design and development.
+              Beyond coding, I'm always eager to learn new technologies, improve
+              my skills, and stay updated with the latest best practices. Every
+              project I work on is a chance to grow, innovate, and create
+              something meaningful for users.
             </p>
           </motion.div>
 
