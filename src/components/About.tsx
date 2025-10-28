@@ -101,9 +101,8 @@ const About = () => {
             </p>
             <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
               I specialize in <strong>Angular</strong>, <strong>Vue.js</strong>,
-              and
-              <strong>React</strong>, along with <strong>TypeScript</strong> and
-              <strong>Tailwind CSS</strong>. My focus is on writing clean,
+              and <strong>React</strong>, along with <strong>TypeScript</strong>{" "}
+              and <strong>Tailwind CSS</strong>. My focus is on writing clean,
               scalable code and bringing designs to life through smooth,
               high-performance interfaces.
             </p>
