@@ -171,10 +171,10 @@ const Skills = () => {
             </h3>
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
               {[
-                "Vite",
                 "Node.js",
                 "Laravel",
                 "MySQL",
+                "Vite",
                 "Socket.io",
                 "Chart.js",
                 "Material-UI",
