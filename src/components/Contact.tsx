@@ -386,7 +386,7 @@ const Contact = () => {
                 className={`w-full text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base ${
                   isSubmitting
                     ? "bg-gray-600 cursor-not-allowed"
-                    : "bg-blue-600 hover:shadow-lg hover:shadow-blue-500/25 cursor-pointer"
+                    : "bg-[#0071e3] hover:shadow-lg hover:shadow-blue-500/25 cursor-pointer"
                 }`}
               >
                 {isSubmitting ? (

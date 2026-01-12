@@ -67,7 +67,7 @@ const About = () => {
             About Me
           </h3>
           <div className="w-20 h-1 mx-auto bg-blue-200 rounded-full mb-6" />
-          <div className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-blue-600 font-medium mb-4">
+          <div className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-[#0071e3] font-medium mb-4">
             Crafting digital experiences with clarity and purpose
           </div>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -178,7 +178,7 @@ const About = () => {
                 className="p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-[#f5f5f7]"
               >
                 <div className="flex items-center gap-4 sm:gap-6">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-blue-600 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-[#0071e3] rounded-full flex items-center justify-center mb-4 sm:mb-6">
                     <Icon
                       size={20}
                       className="sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white"

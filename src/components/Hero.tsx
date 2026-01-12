@@ -72,7 +72,7 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gradient mb-2">
+            <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-[#0071e3] mb-2">
               Lyden CHAI
             </span>
             <span className="text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
@@ -104,7 +104,7 @@ const Hero = () => {
                   behavior: "smooth",
                 });
               }}
-              className="cursor-pointer w-full sm:w-auto bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base lg:text-lg font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+              className="cursor-pointer w-full sm:w-auto bg-gradient-to-r bg-[#0071e3] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base lg:text-lg font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

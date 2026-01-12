@@ -105,7 +105,7 @@ const Skills = () => {
                 scale: 1.05,
                 boxShadow: `0 20px 40px ${skill.color}20`,
               }}
-              className="group relative bg-[#f7f9fb] rounded-xl sm:rounded-2xl p-4 sm:p-6"
+              className="group relative bg-[#f5f5f7] rounded-xl sm:rounded-2xl p-4 sm:p-6"
             >
               {/* Gradient background on hover */}
               <div
@@ -151,8 +151,8 @@ const Skills = () => {
               </div>
 
               {/* Decorative elements */}
-              <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-4 left-4 w-1 h-1 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-4 left-4 w-1 h-1 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" /> */}
             </motion.div>
           ))}
         </div>

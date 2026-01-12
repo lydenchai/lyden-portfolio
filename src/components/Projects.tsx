@@ -8,6 +8,7 @@ import inspectionImg from "../../public/images/inspection.png";
 import hospitalImg from "../../public/images/hospital.png";
 import rehabilitationImg from "../../public/images/rehabilitation.png";
 import goAheadImg from "../../public/images/go-ahead.png";
+import pinkyImg from "../../public/images/pinky-clothing-shop.png";
 
 const Projects = () => {
   const projects = [
@@ -99,6 +100,17 @@ const Projects = () => {
         title: "School Management System",
       },
     },
+    {
+      id: 9,
+      title: "Pinky Clothing E-commerce Platform",
+      description:
+        "Feature-rich e-commerce solution for Pinky Clothing, offering seamless product browsing, secure checkout, and personalized shopping experiences.",
+      image: pinkyImg,
+      featured: false,
+      details: {
+        title: "E-commerce Platform",
+      },
+    },
   ];
 
   const featuredProjects = projects.filter((project) => project.featured);
@@ -144,12 +156,12 @@ const Projects = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 whileHover={{ y: -10 }}
-                className="bg-white rounded-2xl overflow-hidden duration-300"
+                className="bg-white rounded-2xl overflow-hidden duration-200"
               >
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
-                    className="w-full h-48 sm:h-56 lg:h-64 object-cover transition-transform duration-300 hover:scale-110"
+                    className="w-full h-48 sm:h-56 lg:h-64 object-cover transition-transform duration-200 hover:scale-110"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = `https://via.placeholder.com/800x400/6366f1/ffffff?text=${encodeURIComponent(
@@ -157,9 +169,7 @@ const Projects = () => {
                       )}`;
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 </div>
-
                 <div className="p-4 sm:p-6 lg:p-8">
                   <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
                     {project.title}
@@ -193,12 +203,12 @@ const Projects = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 whileHover={{ y: -10 }}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-200"
               >
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
-                    className="w-full h-48 sm:h-56 lg:h-64 object-cover transition-transform duration-300 hover:scale-110"
+                    className="w-full h-48 sm:h-56 lg:h-64 object-cover transition-transform duration-200 hover:scale-110"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = `https://via.placeholder.com/800x400/6366f1/ffffff?text=${encodeURIComponent(
@@ -206,7 +216,6 @@ const Projects = () => {
                       )}`;
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 </div>
 
                 <div className="p-4 sm:p-6 lg:p-8">

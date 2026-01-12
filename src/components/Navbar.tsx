@@ -109,9 +109,9 @@ const Navbar = () => {
                   href={item.href}
                   className={`relative font-medium transition-all duration-300 px-2 py-1 lg:px-3 lg:py-2 text-sm lg:text-base ${
                     isActive
-                      ? "text-purple-600 bg-white backdrop-blur-md rounded-full"
+                      ? "text-[#0071e3] bg-white backdrop-blur-md rounded-full"
                       : scrolled
-                      ? "text-gray-700 hover:text-purple-600 hover:bg-purple-50/50 rounded-full"
+                      ? "text-gray-700 hover:text-[#0071e3] hover:bg-purple-50/50 rounded-full"
                       : "text-gray-300 hover:text-white hover:bg-white/10 rounded-full"
                   }`}
                   initial={{ opacity: 0, y: -20 }}
@@ -127,7 +127,7 @@ const Navbar = () => {
                   {/* Active indicator */}
                   {isActive && (
                     <motion.div
-                      className="from-indigo-900 to-blue-800 bg-purple-50/50 rounded-full"
+                      className="bg-[#0071e3] rounded-full"
                       layoutId="activeIndicator"
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
@@ -138,7 +138,7 @@ const Navbar = () => {
               );
             })}
             <motion.button
-              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-1.5 lg:px-6 lg:py-2 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 text-sm lg:text-base cursor-pointer"
+              className="bg-[#0071e3] text-white px-4 py-1.5 lg:px-6 lg:py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300 text-sm lg:text-base cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => handleNavClick("#contact")}
@@ -186,8 +186,8 @@ const Navbar = () => {
                     type="button"
                     className={`flex items-center justify-between py-2.5 sm:py-3 font-medium transition-colors duration-300 text-sm sm:text-base w-full text-left ${
                       isActive
-                        ? "text-purple-600"
-                        : "text-gray-700 hover:text-purple-600"
+                        ? "text-[#0071e3]"
+                        : "text-gray-700 hover:text-[#0071e3]"
                     }`}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -197,7 +197,7 @@ const Navbar = () => {
                     <span>{item.name}</span>
                     {isActive && (
                       <motion.div
-                        className="w-2 h-2 bg-gradient-to-r from-indigo-900 to-blue-800 rounded-full"
+                        className="w-2 h-2 bg-[#0071e3] rounded-full"
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ duration: 0.3 }}
@@ -207,7 +207,7 @@ const Navbar = () => {
                 );
               })}
               <motion.button
-                className="w-full mt-3 sm:mt-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base cursor-pointer"
+                className="w-full mt-3 sm:mt-4 bg-[#0071e3] text-white py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
