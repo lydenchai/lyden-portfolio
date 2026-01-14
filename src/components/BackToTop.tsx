@@ -55,7 +55,7 @@ const BackToTop = () => {
           }}
           whileTap={{ scale: 0.95 }}
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 z-50 p-3 sm:p-4 bg-[#0071e3] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group back-to-top-pulse cursor-pointer"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 z-50 p-3 sm:p-4 bg-gradient-to-r from-indigo-400 to-purple-400 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group back-to-top-pulse cursor-pointer"
           aria-label="Back to top"
           title="Back to top"
         >

@@ -138,7 +138,7 @@ const Navbar = () => {
               );
             })}
             <motion.button
-              className="flex items-center gap-2 bg-gradient-to-r from-indigo-400 to-purple-400 text-white px-5 py-2 lg:px-7 lg:py-2.5 rounded-full font-semibold transition-all duration-300 text-base lg:text-lg cursor-pointer"
+              className="flex items-center gap-2 bg-gradient-to-r from-indigo-400 to-purple-400 text-white px-5 py-1 lg:px-7 lg:py-2 rounded-full font-semibold transition-all duration-300 text-base lg:text-lg cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => handleNavClick("#contact")}

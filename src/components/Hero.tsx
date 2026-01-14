@@ -112,7 +112,7 @@ const Hero = () => {
             <motion.a
               href={cvFile}
               download="Lyden_Chai_CV.pdf"
-              className="inline-flex items-center justify-center gap-2 border border-gray-400 text-gray-300 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base lg:text-lg font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 shadow-sm"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-gray-400 text-gray-300 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base lg:text-lg font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 shadow-sm"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

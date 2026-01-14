@@ -58,7 +58,7 @@ const Skills = () => {
     },
     {
       name: "UX/UI Design",
-      level: 82,
+      level: 85,
       icon: mdiPalette,
       color: "#a855f7",
       description: "Designing user-centric interfaces and experiences",
@@ -74,7 +74,7 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-14"
+          className="text-center mb-14 px-4"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             My <span className="text-gradient">Skills</span>
@@ -86,7 +86,7 @@ const Skills = () => {
         </motion.div>
 
         {/* Carousel */}
-        <div className="relative">
+        <div className="relative w-full">
           {/* Fade edges */}
           <motion.div
             drag="x"
@@ -94,7 +94,7 @@ const Skills = () => {
               left: -((skills.length - 1) * 364.5), // matches min-w-[350px] for mobile
               right: 0,
             }}
-            className="flex gap-6 px-4 cursor-grab active:cursor-grabbing"
+            className="flex gap-6 pl-4 cursor-grab active:cursor-grabbing"
           >
             {skills.map((skill, idx) => (
               <motion.div
@@ -176,12 +176,9 @@ const Skills = () => {
                 "MySQL",
                 "REST APIs",
                 "Vite",
-                "Socket.io",
                 "Chart.js",
                 "Material UI",
-                "Bootstrap",
                 "Git",
-                "Figma",
               ].map((tech) => (
                 <span
                   key={tech}

@@ -187,7 +187,7 @@ const Projects = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -6, scale: 1.04 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
-                className="bg-white rounded-2xl overflow-hidden"
+                className="bg-white rounded-2xl border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-xl overflow-hidden"
               >
                 <div className="relative overflow-hidden">
                   <img
@@ -239,7 +239,7 @@ const Projects = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -6, scale: 1.04 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
-                className="bg-white rounded-2xl overflow-hidden"
+                className="bg-white rounded-2xl border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-xl overflow-hidden"
               >
                 <div className="relative overflow-hidden">
                   <img
