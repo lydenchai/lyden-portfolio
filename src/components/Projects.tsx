@@ -175,7 +175,7 @@ const Projects = () => {
 
         {/* Featured Projects */}
         <div className="mb-12 sm:mb-16">
-          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 text-center">
+          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 text-start">
             Featured Projects
           </h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -227,7 +227,7 @@ const Projects = () => {
 
         {/* Other Projects */}
         <div>
-          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 text-center">
+          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 text-start">
             Other Projects
           </h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
