@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "host": "npm run dev -- --host #IPADDRESS#",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"

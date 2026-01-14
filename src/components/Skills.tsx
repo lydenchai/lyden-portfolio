@@ -23,14 +23,14 @@ const Skills = () => {
     },
     {
       name: "Vue",
-      level: 65,
+      level: 70,
       icon: mdiVuejs,
       color: "#42b883",
       description: "Progressive framework for building user interfaces",
     },
     {
       name: "React",
-      level: 55,
+      level: 50,
       icon: mdiReact,
       color: "#61dafb",
       description: "JavaScript library for building user interfaces",
@@ -51,7 +51,7 @@ const Skills = () => {
         "Strongly typed programming language that builds on JavaScript",
     },
     {
-      name: "HTML/CSS",
+      name: "HTML5/CSS",
       level: 80,
       icon: mdiLanguageHtml5,
       color: "#e34f26",
@@ -74,116 +74,126 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-12 sm:py-16 lg:py-20 bg-white">
+    <section id="skills" className="py-16 lg:py-20 bg-white overflow-hidden">
       <div className="container mx-auto sm:px-4 lg:px-8">
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-10 sm:mb-12 lg:mb-16"
+          className="text-center mb-14"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             My <span className="text-gradient">Skills</span>
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-xs sm:max-w-2xl lg:max-w-3xl mx-auto px-4 sm:px-0 leading-relaxed">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Technologies and frameworks I use to build modern, scalable, and
-            performant web applications and enterprise systems.
+            high-performance applications.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 px-4 sm:px-0">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{
-                y: -10,
-                scale: 1.05,
-                boxShadow: `0 20px 40px ${skill.color}20`,
-              }}
-              className="group relative bg-[#f5f5f7] rounded-xl sm:rounded-2xl p-4 sm:p-6"
-            >
-              {/* Gradient background on hover */}
-              <div
-                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-200"
-                style={{ backgroundColor: skill.color }}
-              />
-
-              {/* Content */}
-              <div className="relative z-10 text-center">
-                <div
-                  className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mx-auto mb-3 sm:mb-4 rounded-full flex items-center justify-center shadow-lg"
-                  style={{ backgroundColor: skill.color }}
-                >
-                  <Icon
-                    path={skill.icon}
-                    size={1.2}
-                    className="sm:w-6 sm:h-6 lg:w-10 lg:h-10"
-                    color="white"
-                  />
+        {/* Carousel */}
+        <div className="relative">
+          {/* Fade edges */}
+          <motion.div
+            drag="x"
+            dragConstraints={{
+              left: -((skills.length - 1) * 364.5), // matches min-w-[350px] for mobile
+              right: 0,
+            }}
+            className="flex gap-6 px-4 cursor-grab active:cursor-grabbing"
+          >
+            {skills.map((skill, idx) => (
+              <motion.div
+                key={skill.name}
+                whileHover={{ y: -6, scale: 1.04 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 280,
+                  damping: 22,
+                }}
+                className="min-w-[340px] bg-[#f5f5f7] rounded-2xl px-4 sm:px-6 py-6 sm:py-8 text-center flex flex-col items-center"
+              >
+                {/* Icon */}
+                <div className="mb-5">
+                  <div
+                    className="w-16 h-16 flex items-center justify-center rounded-full"
+                    style={{
+                      background: `linear-gradient(135deg, ${skill.color}20, ${skill.color}40)`,
+                    }}
+                  >
+                    <Icon path={skill.icon} size={1.6} color={skill.color} />
+                  </div>
                 </div>
 
-                <h3 className="text-sm sm:text-base lg:text-xl font-bold text-gray-900 mb-2 group-hover:text-gray-800 transition-colors">
+                {/* Title */}
+                <h3 className="text-base font-semibold text-gray-900 mb-1">
                   {skill.name}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed hidden sm:block">
+                {/* Description */}
+                <p className="text-sm text-gray-500 mb-4 max-w-[180px] leading-relaxed">
                   {skill.description}
                 </p>
 
-                {/* Skill level indicator */}
-                <div className="mt-4">
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <motion.div
-                      className="h-2 rounded-full"
-                      style={{ backgroundColor: skill.color }}
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: index * 0.1 }}
-                    />
-                  </div>
+                {/* Progress */}
+                <div className="w-full bg-gray-300 rounded-full h-1.5 overflow-hidden">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${skill.level}%` }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.9, delay: idx * 0.05 }}
+                    className="h-1.5 rounded-full"
+                    style={{
+                      background: `linear-gradient(90deg, ${skill.color}80, ${skill.color})`,
+                    }}
+                  />
                 </div>
-              </div>
 
-              {/* Decorative elements */}
-              {/* <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-4 left-4 w-1 h-1 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" /> */}
-            </motion.div>
-          ))}
+                <span className="mt-2 text-xs text-gray-400">
+                  {skill.level}%
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
 
-        {/* Additional Skills Summary */}
+        {/* Hint */}
+        <p className="mt-6 text-center text-sm text-gray-400">
+          Drag horizontally to explore →
+        </p>
+
+        {/* Additional Skills */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-10 sm:mt-12 lg:mt-16 text-center px-4 sm:px-0"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-16 text-center px-4"
         >
-          <div className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl sm:rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto">
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
+          <div className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl p-8 max-w-4xl mx-auto ">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Additional Technologies
             </h3>
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+            <div className="flex flex-wrap justify-center gap-3">
               {[
+                "Ionic",
                 "Node.js",
-                "Laravel",
+                "PHP/Laravel",
                 "MySQL",
+                "REST APIs",
                 "Vite",
                 "Socket.io",
                 "Chart.js",
-                "Material-UI",
+                "Material UI",
                 "Bootstrap",
                 "Git",
+                "Figma",
               ].map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 sm:px-4 py-1 sm:py-2 bg-white text-gray-700 rounded-full text-xs sm:text-sm font-medium shadow-sm hover:shadow-md transition-shadow duration-200"
+                  className="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-700 shadow-sm hover:shadow-md transition"
                 >
                   {tech}
                 </span>

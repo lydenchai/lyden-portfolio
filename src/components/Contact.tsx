@@ -102,10 +102,7 @@ const Contact = () => {
   ];
 
   return (
-    <section
-      id="contact"
-      className="py-12 sm:py-16 lg:py-20 bg-black relative overflow-hidden"
-    >
+    <section id="contact" className="py-16 lg:py-20 bg-black relative overflow-hidden">
       {/* Animated gradient overlay */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <motion.div
@@ -162,7 +159,7 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 items-start">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
