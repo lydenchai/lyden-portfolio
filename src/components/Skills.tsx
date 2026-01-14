@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 import Icon from "@mdi/react";
 import {
   mdiAngular,
@@ -8,6 +9,8 @@ import {
   mdiLanguageHtml5,
   mdiTailwind,
   mdiPalette,
+  mdiChevronLeft,
+  mdiChevronRight,
 } from "@mdi/js";
 
 const Skills = () => {
@@ -65,6 +68,77 @@ const Skills = () => {
     },
   ];
 
+  const controls = useAnimation();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [containerWidth, setContainerWidth] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cardWidth = 340;
+  const gap = 24;
+  const stride = cardWidth + gap;
+  const totalWidth = skills.length * stride;
+
+  useEffect(() => {
+    if (containerRef.current) {
+      setContainerWidth(containerRef.current.offsetWidth);
+    }
+
+    // Simple resize listener
+    const handleResize = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.offsetWidth);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Calculate the maximum negative scroll (so we don't scroll past the end)
+  // If content is smaller than container, drag limit is 0
+  const maxScroll = Math.min(0, -(totalWidth - containerWidth + 32)); // +32 for padding
+
+  useEffect(() => {
+    const targetX = -currentIndex * stride;
+    // Clamp to maxScroll
+    const finalX = Math.max(targetX, maxScroll);
+    controls.start({ x: finalX });
+  }, [currentIndex, maxScroll, controls, stride]);
+
+  const handleNext = () => {
+    if (currentIndex < skills.length - 1) {
+      setCurrentIndex((prev) => prev + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prev) => prev - 1);
+    }
+  };
+
+  // Optional: Update index on drag end (simplified snapping)
+  // Update index on drag end matches the visual position
+  const handleDragEnd = (_event: any, info: any) => {
+    const offset = info.offset.x;
+    const velocity = info.velocity.x;
+
+    // Current visual position (approximate)
+    // We start at -currentIndex * stride
+    // We moved by 'offset'
+    const currentX = -currentIndex * stride;
+    const predictedX = currentX + offset + velocity * 0.2; // 0.2 is a "power" factor for inertia
+
+    // Calculate which index is closest to predictedX
+    // x = -index * stride  =>  index = -x / stride
+    const estimatedIndex = -predictedX / stride;
+
+    // Round to nearest integer and clamp
+    let newIndex = Math.round(estimatedIndex);
+    newIndex = Math.max(0, Math.min(skills.length - 1, newIndex));
+
+    setCurrentIndex(newIndex);
+  };
+
   return (
     <section id="skills" className="py-16 lg:py-20 bg-white overflow-hidden">
       <div className="container mx-auto sm:px-4 lg:px-8">
@@ -86,75 +160,98 @@ const Skills = () => {
         </motion.div>
 
         {/* Carousel */}
-        <div className="relative w-full">
+        <div className="relative w-full" ref={containerRef}>
           {/* Fade edges */}
           <motion.div
             drag="x"
             dragConstraints={{
-              left: -((skills.length - 1) * 364.5), // matches min-w-[350px] for mobile
+              left: maxScroll,
               right: 0,
             }}
-            className="flex gap-6 pl-4 cursor-grab active:cursor-grabbing"
+            animate={controls}
+            onDragEnd={handleDragEnd}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            className="flex gap-6 pl-4 cursor-grab active:cursor-grabbing pb-12"
           >
             {skills.map((skill, idx) => (
               <motion.div
                 key={skill.name}
-                whileHover={{ y: -6, scale: 1.04 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 280,
-                  damping: 22,
-                }}
-                className="min-w-[340px] bg-[#f5f5f7] rounded-2xl px-4 sm:px-6 py-6 sm:py-8 text-center flex flex-col items-center"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="min-w-[320px] h-[360px] bg-[#f5f5f7] rounded-[1.5rem] p-10 flex flex-col justify-between group cursor-default relative overflow-hidden text-left"
               >
-                {/* Icon */}
-                <div className="mb-5">
-                  <div
-                    className="w-16 h-16 flex items-center justify-center rounded-full"
-                    style={{
-                      background: `linear-gradient(135deg, ${skill.color}20, ${skill.color}40)`,
-                    }}
-                  >
-                    <Icon path={skill.icon} size={1.6} color={skill.color} />
+                <div>
+                  {/* Icon */}
+                  <div className="mb-6">
+                    <Icon path={skill.icon} size={2.5} color={skill.color} />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-3xl font-semibold text-gray-900 mb-3 tracking-tight">
+                    {skill.name}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-500 text-base font-medium leading-relaxed max-w-[95%]">
+                    {skill.description}
+                  </p>
+                </div>
+
+                {/* Bottom Progress - Minimalist */}
+                <div className="w-full">
+                  <div className="flex justify-between items-end mb-3">
+                    <span className="text-[13px] font-semibold text-gray-400 uppercase tracking-widest">
+                      Proficiency
+                    </span>
+                    <span className="text-base font-bold text-gray-900">
+                      {skill.level}%
+                    </span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${skill.level}%` }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1.2, delay: idx * 0.1 }}
+                      className="h-full rounded-full"
+                      style={{ background: skill.color }}
+                    />
                   </div>
                 </div>
-
-                {/* Title */}
-                <h3 className="text-base font-semibold text-gray-900 mb-1">
-                  {skill.name}
-                </h3>
-
-                {/* Description */}
-                <p className="text-sm text-gray-500 mb-4 max-w-[180px] leading-relaxed">
-                  {skill.description}
-                </p>
-
-                {/* Progress */}
-                <div className="w-full bg-gray-300 rounded-full h-1.5 overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.level}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.9, delay: idx * 0.05 }}
-                    className="h-1.5 rounded-full"
-                    style={{
-                      background: `linear-gradient(90deg, ${skill.color}80, ${skill.color})`,
-                    }}
-                  />
-                </div>
-
-                <span className="mt-2 text-xs text-gray-400">
-                  {skill.level}%
-                </span>
               </motion.div>
             ))}
           </motion.div>
         </div>
 
-        {/* Hint */}
-        <p className="mt-6 text-center text-sm text-gray-400">
-          Drag horizontally to explore →
-        </p>
+        {/* Navigation Buttons */}
+        <div className="flex justify-end gap-4 px-4 -mt-6 mb-12">
+          <button
+            onClick={handlePrev}
+            disabled={currentIndex === 0}
+            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all cursor-pointer ${
+              currentIndex === 0
+                ? "bg-gray-100 text-gray-300 cursor-not-allowed"
+                : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+            }`}
+          >
+            <Icon path={mdiChevronLeft} size={1.2} />
+          </button>
+          <button
+            onClick={handleNext}
+            disabled={
+              currentIndex === skills.length - 1 ||
+              -(currentIndex + 1) * stride < maxScroll - 50 // tolerance
+            }
+            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all cursor-pointer ${
+              currentIndex === skills.length - 1 ||
+              -(currentIndex + 1) * stride < maxScroll - 50
+                ? "bg-gray-100 text-gray-300 cursor-not-allowed"
+                : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+            }`}
+          >
+            <Icon path={mdiChevronRight} size={1.2} />
+          </button>
+        </div>
 
         {/* Additional Skills */}
         <motion.div
@@ -162,10 +259,10 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-16 text-center px-4"
+          className="mt-12 max-w-[800px] mx-auto px-4"
         >
-          <div className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl p-8 max-w-4xl mx-auto ">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <div className="bg-[#f5f5f7] rounded-[2.5rem] p-8 sm:p-12 text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8 tracking-tight">
               Additional Technologies
             </h3>
             <div className="flex flex-wrap justify-center gap-3">
@@ -182,7 +279,7 @@ const Skills = () => {
               ].map((tech) => (
                 <span
                   key={tech}
-                  className="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-700 shadow-sm hover:shadow-md transition"
+                  className="px-5 py-2.5 bg-white rounded-full text-sm font-semibold text-gray-700 shadow-sm border border-gray-100 hover:scale-105 hover:shadow-md transition-all duration-300 cursor-default"
                 >
                   {tech}
                 </span>

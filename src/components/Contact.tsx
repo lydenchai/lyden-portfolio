@@ -102,7 +102,10 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-16 lg:py-20 bg-black relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-16 lg:py-20 bg-black relative overflow-hidden"
+    >
       {/* Animated gradient overlay */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <motion.div
@@ -172,7 +175,7 @@ const Contact = () => {
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
                 Let's Talk
               </h3>
-              <p className="text-gray-300 mb-6 sm:mb-8 text-sm sm:text-base">
+              <p className="text-gray-300 mb-6 sm:mb-8 text-sm sm:text-base leading-relaxed">
                 I'm currently available for freelance projects and full-time
                 opportunities. Whether you have a project in mind or just want
                 to say hello, I'd love to hear from you.

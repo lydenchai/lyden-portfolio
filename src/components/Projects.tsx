@@ -185,14 +185,16 @@ const Projects = () => {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -6, scale: 1.04 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                className="bg-white rounded-2xl border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-xl overflow-hidden"
+                whileHover={{ y: -10 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-2xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl transition-all duration-300 overflow-hidden group"
               >
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden aspect-video">
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10" />
                   <img
                     src={project.image}
-                    className="w-full h-48 sm:h-56 lg:h-64 object-cover"
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    alt={project.title}
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = `https://via.placeholder.com/800x400/6366f1/ffffff?text=${encodeURIComponent(
@@ -201,19 +203,19 @@ const Projects = () => {
                     }}
                   />
                 </div>
-                <div className="p-4 sm:p-6 lg:p-8">
-                  <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
+                <div className="p-6 sm:p-8">
+                  <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 transition-colors">
                     {project.title}
                   </h4>
-                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
+                  <p className="text-gray-500 mb-6 text-sm sm:text-base leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mt-2">
+                  <div className="flex flex-wrap gap-2">
                     {project.technologies &&
                       project.technologies.filter(Boolean).map((tech, idx) => (
                         <span
                           key={idx}
-                          className="bg-gray-100 text-gray-800 text-xs font-semibold px-2.5 py-1 rounded-full border border-gray-200"
+                          className="bg-gray-50 text-gray-600 text-xs font-medium px-3 py-1.5 rounded-full border border-gray-100"
                         >
                           {tech}
                         </span>
@@ -237,14 +239,16 @@ const Projects = () => {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -6, scale: 1.04 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                className="bg-white rounded-2xl border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-xl overflow-hidden"
+                whileHover={{ y: -10 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-2xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl transition-all duration-300 overflow-hidden group"
               >
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden aspect-video">
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10" />
                   <img
                     src={project.image}
-                    className="w-full h-48 sm:h-56 lg:h-64 object-cover"
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    alt={project.title}
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = `https://via.placeholder.com/800x400/6366f1/ffffff?text=${encodeURIComponent(
@@ -253,19 +257,19 @@ const Projects = () => {
                     }}
                   />
                 </div>
-                <div className="p-4 sm:p-6 lg:p-8">
-                  <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
+                <div className="p-6 sm:p-8">
+                  <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 transition-colors">
                     {project.title}
                   </h4>
-                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
+                  <p className="text-gray-500 mb-6 text-sm sm:text-base leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mt-2">
+                  <div className="flex flex-wrap gap-2">
                     {project.technologies &&
                       project.technologies.filter(Boolean).map((tech, idx) => (
                         <span
                           key={idx}
-                          className="bg-gray-100 text-gray-800 text-xs font-semibold px-2.5 py-1 rounded-full border border-gray-200"
+                          className="bg-gray-50 text-gray-600 text-xs font-medium px-3 py-1.5 rounded-full border border-gray-100"
                         >
                           {tech}
                         </span>
