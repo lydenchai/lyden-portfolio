@@ -190,7 +190,6 @@ const Projects = () => {
                 className="bg-white rounded-2xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl transition-all duration-300 overflow-hidden group"
               >
                 <div className="relative overflow-hidden aspect-video">
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10" />
                   <img
                     src={project.image}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
@@ -244,7 +243,6 @@ const Projects = () => {
                 className="bg-white rounded-2xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl transition-all duration-300 overflow-hidden group"
               >
                 <div className="relative overflow-hidden aspect-video">
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10" />
                   <img
                     src={project.image}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
