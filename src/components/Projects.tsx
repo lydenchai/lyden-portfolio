@@ -192,7 +192,7 @@ const Projects = () => {
                 <div className="relative overflow-hidden aspect-video">
                   <img
                     src={project.image}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover transition-transform duration-700"
                     alt={project.title}
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
@@ -245,7 +245,7 @@ const Projects = () => {
                 <div className="relative overflow-hidden aspect-video">
                   <img
                     src={project.image}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover transition-transform duration-700"
                     alt={project.title}
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
