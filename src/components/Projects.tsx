@@ -9,6 +9,7 @@ import hospitalImg from "../../public/images/hospital.png";
 import rehabilitationImg from "../../public/images/rehabilitation.png";
 import goAheadImg from "../../public/images/go-ahead.png";
 import pinkyImg from "../../public/images/pinky-clothing-shop.png";
+import cgmcImg from "../../public/images/cgmc-hr.png";
 
 const Projects = () => {
   const projects = [
@@ -22,6 +23,7 @@ const Projects = () => {
       details: {
         title: "Human Resource Management System",
       },
+      technologies: ["Angular-15", "SCSS", "Bootstrap", "Docker", "Nginx"],
     },
     {
       id: 2,
@@ -33,6 +35,7 @@ const Projects = () => {
       details: {
         title: "Accounting Management System",
       },
+      technologies: ["Angular-20", "SCSS", "Bootstrap", "Docker", "Nginx"],
     },
     {
       id: 3,
@@ -44,6 +47,7 @@ const Projects = () => {
       details: {
         title: "Health Care Benefit Management System",
       },
+      technologies: ["Angular-17", "SCSS", "Bootstrap", "Docker", "Nginx"],
     },
     {
       id: 4,
@@ -55,6 +59,7 @@ const Projects = () => {
       details: {
         title: "Social Security Inspection System",
       },
+      technologies: ["Angular-17", "SCSS", "Bootstrap", "Docker", "Nginx"],
     },
     {
       id: 5,
@@ -66,6 +71,7 @@ const Projects = () => {
       details: {
         title: "Hospital Management System",
       },
+      technologies: ["Angular-17", "SCSS", "Bootstrap", "Docker", "Nginx"],
     },
     {
       id: 6,
@@ -77,6 +83,19 @@ const Projects = () => {
       details: {
         title: "Rehabilitation Management System",
       },
+      technologies: ["Angular-17", "SCSS", "Bootstrap", "Docker", "Nginx"],
+    },
+    {
+      id: 6,
+      title: "CGMC HR Admin",
+      description:
+        "Comprehensive HR management platform streamlining employee lifecycle, payroll processing, and workforce analytics for the Commercial Gambling Management Commission of Cambodia.",
+      image: cgmcImg,
+      featured: true,
+      details: {
+        title: "Commercial Gambling Management Commission of Cambodia",
+      },
+      technologies: ["Angular-15", "RxJS", "SCSS", "Bootstrap", "Docker"],
     },
     {
       id: 7,
@@ -88,6 +107,7 @@ const Projects = () => {
       details: {
         title: "Rental Management System",
       },
+      technologies: ["Angular-17", "SCSS", "Bootstrap", "Docker", "Nginx"],
     },
     {
       id: 8,
@@ -99,6 +119,15 @@ const Projects = () => {
       details: {
         title: "School Management System",
       },
+      technologies: [
+        "Vue-2",
+        "JavaScript",
+        "SCSS",
+        "Bootstrap",
+        "Node.js",
+        "Express.js",
+        "Sequelize",
+      ],
     },
     {
       id: 9,
@@ -110,6 +139,13 @@ const Projects = () => {
       details: {
         title: "E-commerce Platform",
       },
+      technologies: [
+        "Angular-20",
+        "SCSS",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+      ],
     },
   ];
 
@@ -149,6 +185,7 @@ const Projects = () => {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
+                whileHover={{ y: -6, scale: 1.04 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 className="bg-white rounded-2xl overflow-hidden"
               >
@@ -171,6 +208,17 @@ const Projects = () => {
                   <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
                     {project.description}
                   </p>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {project.technologies &&
+                      project.technologies.filter(Boolean).map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className="bg-gray-100 text-gray-800 text-xs font-semibold px-2.5 py-1 rounded-full border border-gray-200"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -189,6 +237,7 @@ const Projects = () => {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
+                whileHover={{ y: -6, scale: 1.04 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 className="bg-white rounded-2xl overflow-hidden"
               >
@@ -204,7 +253,6 @@ const Projects = () => {
                     }}
                   />
                 </div>
-
                 <div className="p-4 sm:p-6 lg:p-8">
                   <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
                     {project.title}
@@ -212,6 +260,17 @@ const Projects = () => {
                   <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
                     {project.description}
                   </p>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {project.technologies &&
+                      project.technologies.filter(Boolean).map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className="bg-gray-100 text-gray-800 text-xs font-semibold px-2.5 py-1 rounded-full border border-gray-200"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                  </div>
                 </div>
               </motion.div>
             ))}

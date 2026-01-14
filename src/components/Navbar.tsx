@@ -109,9 +109,9 @@ const Navbar = () => {
                   href={item.href}
                   className={`relative font-medium transition-all duration-300 px-2 py-1 lg:px-3 lg:py-2 text-sm lg:text-base ${
                     isActive
-                      ? "text-[#0071e3] bg-white backdrop-blur-md rounded-full"
+                      ? "text-[#635bff] bg-white backdrop-blur-md rounded-full"
                       : scrolled
-                      ? "text-gray-700 hover:text-[#0071e3] hover:bg-purple-50/50 rounded-full"
+                      ? "text-gray-700 hover:text-[#635bff] hover:bg-purple-50/50 rounded-full"
                       : "text-gray-300 hover:text-white hover:bg-white/10 rounded-full"
                   }`}
                   initial={{ opacity: 0, y: -20 }}
@@ -138,7 +138,7 @@ const Navbar = () => {
               );
             })}
             <motion.button
-              className="bg-[#0071e3] text-white px-4 py-1.5 lg:px-6 lg:py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300 text-sm lg:text-base cursor-pointer"
+              className="flex items-center gap-2 bg-gradient-to-r from-indigo-400 to-purple-400 text-white px-5 py-2 lg:px-7 lg:py-2.5 rounded-full font-semibold transition-all duration-300 text-base lg:text-lg cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => handleNavClick("#contact")}
@@ -186,8 +186,8 @@ const Navbar = () => {
                     type="button"
                     className={`flex items-center justify-between py-2.5 sm:py-3 font-medium transition-colors duration-300 text-sm sm:text-base w-full text-left ${
                       isActive
-                        ? "text-[#0071e3]"
-                        : "text-gray-700 hover:text-[#0071e3]"
+                        ? "text-[#635bff]"
+                        : "text-gray-700 hover:text-[#635bff]"
                     }`}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -197,7 +197,7 @@ const Navbar = () => {
                     <span>{item.name}</span>
                     {isActive && (
                       <motion.div
-                        className="w-2 h-2 bg-[#0071e3] rounded-full"
+                        className="w-2 h-2 bg-[#635bff] rounded-full"
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ duration: 0.3 }}
@@ -207,7 +207,7 @@ const Navbar = () => {
                 );
               })}
               <motion.button
-                className="w-full mt-3 sm:mt-4 bg-[#0071e3] text-white py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base cursor-pointer"
+                className="w-full mt-3 sm:mt-4 bg-gradient-to-r from-indigo-400 to-purple-400 text-white py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}

@@ -3,14 +3,13 @@ import { Code, Palette, Rocket, Zap, Users, Target } from "lucide-react";
 
 const About = () => {
   const skills = [
-    { name: "Angular", level: 80, color: "from-red-600 to-red-500" }, // Angular Red
-    { name: "Vue", level: 70, color: "from-green-500 to-green-400" }, // Vue Green
-    { name: "React", level: 50, color: "from-cyan-400 to-blue-400" }, // React Blue
-    { name: "JavaScript", level: 85, color: "from-yellow-400 to-yellow-300" }, // JavaScript Yellow
-    { name: "TypeScript", level: 90, color: "from-blue-600 to-blue-500" }, // TypeScript Blue
+    { name: "Angular", level: 85, color: "from-red-600 to-red-500" }, // Angular Red
+    { name: "Vue", level: 60, color: "from-green-500 to-green-400" }, // Vue Green
+    { name: "JavaScript", level: 80, color: "from-yellow-400 to-yellow-300" }, // JavaScript Yellow
+    { name: "TypeScript", level: 80, color: "from-blue-600 to-blue-500" }, // TypeScript Blue
     { name: "HTML5/CSS", level: 90, color: "from-orange-400 to-orange-500" }, // Tailwind Cyan
     { name: "Tailwind CSS", level: 90, color: "from-cyan-400 to-teal-400" }, // Tailwind Cyan
-    { name: "UI/UX Design", level: 82, color: "from-purple-500 to-pink-500" }, // Creative Purple-Pink
+    { name: "UI/UX Design", level: 85, color: "from-purple-500 to-pink-500" }, // Creative Purple-Pink
   ];
 
   const services = [
@@ -100,8 +99,8 @@ const About = () => {
               work seamlessly on any device.
             </p>
             <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-              I specialize in <strong>Angular</strong>, <strong>Vue.js</strong>,
-              and <strong>React</strong>, along with <strong>TypeScript</strong>{" "}
+              I specialize in <strong>Angular</strong> and{" "}
+              <strong>Vue.js</strong>, along with <strong>TypeScript</strong>{" "}
               and <strong>Tailwind CSS</strong>. My focus is on writing clean,
               scalable code and bringing designs to life through smooth,
               high-performance interfaces.
@@ -174,7 +173,7 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+                whileHover={{ y: -6, scale: 1.04 }}
                 className="p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-[#f5f5f7]"
               >
                 <div className="flex flex-col items-center gap-2 mb-4">

@@ -3,7 +3,6 @@ import Icon from "@mdi/react";
 import {
   mdiAngular,
   mdiVuejs,
-  mdiReact,
   mdiLanguageJavascript,
   mdiLanguageTypescript,
   mdiLanguageHtml5,
@@ -15,7 +14,7 @@ const Skills = () => {
   const skills = [
     {
       name: "Angular",
-      level: 80,
+      level: 85,
       icon: mdiAngular,
       color: "#dd0031",
       description:
@@ -23,28 +22,21 @@ const Skills = () => {
     },
     {
       name: "Vue",
-      level: 70,
+      level: 60,
       icon: mdiVuejs,
       color: "#42b883",
       description: "Progressive framework for building user interfaces",
     },
     {
-      name: "React",
-      level: 50,
-      icon: mdiReact,
-      color: "#61dafb",
-      description: "JavaScript library for building user interfaces",
-    },
-    {
       name: "JavaScript",
-      level: 85,
+      level: 80,
       icon: mdiLanguageJavascript,
       color: "#f7df1e",
       description: "Dynamic programming language for web development",
     },
     {
       name: "TypeScript",
-      level: 90,
+      level: 80,
       icon: mdiLanguageTypescript,
       color: "#3178c6",
       description:
