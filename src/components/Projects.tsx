@@ -15,110 +15,83 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "NSSF HR Admin",
+      title: "Accounting Management System",
       description:
-        "Comprehensive HR management platform streamlining employee lifecycle, payroll processing, and workforce analytics for Cambodia's National Social Security Fund.",
-      image: hrImg,
+        "A comprehensive accounting dashboard designed for the NSSF, streamlining administrative operations with general ledger, AP/AR workflows, and financial reporting.",
+      image: accImg,
       featured: true,
-      details: {
-        title: "Human Resource Management System",
-      },
-      technologies: ["Angular-15", "SCSS", "Bootstrap", "Docker", "Nginx"],
+      technologies: ["Angular 20", "SCSS", "Bootstrap", "Docker", "Nginx"],
     },
     {
       id: 2,
-      title: "NSSF Accounting Admin",
+      title: "Human Resource Management System",
       description:
-        "Advanced financial management system automating accounting processes, generating detailed reports, and ensuring compliance with national financial regulations.",
-      image: accImg,
+        "A comprehensive HR management dashboard for the NSSF, streamlining employee lifecycle management with payroll processing, workforce analytics, and automated workflows for leave, attendance, and benefits administration.",
+      image: hrImg,
       featured: true,
-      details: {
-        title: "Accounting Management System",
-      },
-      technologies: ["Angular-20", "SCSS", "Bootstrap", "Docker", "Nginx"],
+      technologies: ["Angular 15", "SCSS", "Bootstrap", "Docker", "Nginx"],
     },
     {
       id: 3,
-      title: "NSSF Benefit Admin",
+      title: "Health Care Benefit Management System",
       description:
         "Digital healthcare benefit platform enabling seamless claim processing, provider network management, and patient care coordination across Cambodia.",
       image: benefitImg,
       featured: true,
-      details: {
-        title: "Health Care Benefit Management System",
-      },
       technologies: ["Angular-17", "SCSS", "Bootstrap", "Docker", "Nginx"],
     },
     {
       id: 4,
-      title: "NSSF Inspection Admin",
+      title: "Social Security Inspection System",
       description:
         "Smart inspection management system optimizing compliance monitoring, scheduling inspections, and generating comprehensive audit reports for social security operations.",
       image: inspectionImg,
       featured: true,
-      details: {
-        title: "Social Security Inspection System",
-      },
       technologies: ["Angular-17", "SCSS", "Bootstrap", "Docker", "Nginx"],
     },
     {
       id: 5,
-      title: "NSSF Hospital Admin",
+      title: "Hospital Management System",
       description:
         "Integrated hospital management solution coordinating patient care, medical records, staff scheduling, and resource allocation for healthcare facilities.",
       image: hospitalImg,
       featured: true,
-      details: {
-        title: "Hospital Management System",
-      },
       technologies: ["Angular-17", "SCSS", "Bootstrap", "Docker", "Nginx"],
     },
     {
       id: 6,
-      title: "NSSF Rehabilitation Admin",
+      title: "Rehabilitation Management System",
       description:
         "Specialized rehabilitation management platform tracking patient progress, therapy sessions, and recovery outcomes with data-driven insights.",
       image: rehabilitationImg,
       featured: true,
-      details: {
-        title: "Rehabilitation Management System",
-      },
       technologies: ["Angular-17", "SCSS", "Bootstrap", "Docker", "Nginx"],
     },
     {
-      id: 6,
-      title: "CGMC HR Admin",
+      id: 7,
+      title: "Commercial Gambling Management Commission of Cambodia",
       description:
         "Comprehensive HR management platform streamlining employee lifecycle, payroll processing, and workforce analytics for the Commercial Gambling Management Commission of Cambodia.",
       image: cgmcImg,
       featured: true,
-      details: {
-        title: "Commercial Gambling Management Commission of Cambodia",
-      },
       technologies: ["Angular-15", "RxJS", "SCSS", "Bootstrap", "Docker"],
     },
     {
-      id: 7,
+      id: 8,
       title: "Bontub Rental Platform",
       description:
         "Modern property rental marketplace connecting landlords and tenants with smart matching algorithms, secure payments, and comprehensive property management tools.",
       image: "https://bontub.com/bg-hero.png",
       featured: true,
-      details: {
-        title: "Rental Management System",
-      },
       technologies: ["Angular-17", "SCSS", "Bootstrap", "Docker", "Nginx"],
     },
     {
-      id: 8,
-      title: "GoAhead School Management System",
+      id: 9,
+      title: "School Management System",
       description:
         "Comprehensive school management platform streamlining student enrollment, academic tracking, staff management, and administrative processes for educational institutions.",
       image: goAheadImg,
       featured: false,
-      details: {
-        title: "School Management System",
-      },
       technologies: [
         "Vue-2",
         "JavaScript",
@@ -130,15 +103,12 @@ const Projects = () => {
       ],
     },
     {
-      id: 9,
-      title: "Pinky Clothing E-commerce Platform",
+      id: 10,
+      title: "E-commerce Platform",
       description:
         "Feature-rich e-commerce solution for Pinky Clothing, offering seamless product browsing, secure checkout, and personalized shopping experiences.",
       image: pinkyImg,
       featured: false,
-      details: {
-        title: "E-commerce Platform",
-      },
       technologies: [
         "Angular-20",
         "SCSS",
