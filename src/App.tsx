@@ -11,11 +11,15 @@ import BackToTop from "./components/BackToTop";
 function App() {
   useEffect(() => {
     // Ensure page always starts at the top on load/refresh
-    window.scrollTo(0, 0);
+    globalThis.window.scrollTo(0, 0);
 
     // Clear any hash from URL that might cause auto-scrolling
-    if (window.location.hash) {
-      window.history.replaceState(null, "", window.location.pathname);
+    if (globalThis.window.location.hash) {
+      globalThis.window.history.replaceState(
+        null,
+        "",
+        globalThis.window.location.pathname,
+      );
     }
   }, []);
 

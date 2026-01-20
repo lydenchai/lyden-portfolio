@@ -184,7 +184,7 @@ const Skills = () => {
                 key={skill.name}
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="min-w-[320px] h-[360px] bg-[#f5f5f7] rounded-[1.5rem] p-10 flex flex-col justify-between group cursor-default relative overflow-hidden text-left"
+                className="min-w-[320px] h-[360px] bg-[#f5f5f7] rounded-[1.5rem] p-10 flex flex-col justify-between group relative overflow-hidden text-left cursor-grab"
               >
                 <div>
                   {/* Icon */}

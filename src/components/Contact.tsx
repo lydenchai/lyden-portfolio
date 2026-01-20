@@ -26,7 +26,7 @@ const Contact = () => {
   }>({ type: null, message: "" });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({
       ...formData,
@@ -41,12 +41,12 @@ const Contact = () => {
 
     try {
       const subject = encodeURIComponent(
-        formData.subject || "Contact from Portfolio"
+        formData.subject || "Contact from Portfolio",
       );
       const body = encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
       );
-      window.location.href = `mailto:lyden.chai@gmail.com?subject=${subject}&body=${body}`;
+      globalThis.window.location.href = `mailto:lyden.chai@gmail.com?subject=${subject}&body=${body}`;
 
       setSubmitStatus({
         type: "success",
