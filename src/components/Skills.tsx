@@ -118,7 +118,13 @@ const Skills = () => {
 
   // Optional: Update index on drag end (simplified snapping)
   // Update index on drag end matches the visual position
-  const handleDragEnd = (_event: any, info: any) => {
+  const handleDragEnd = (
+    _event: MouseEvent | TouchEvent | PointerEvent,
+    info: {
+      offset: { x: number; y: number };
+      velocity: { x: number; y: number };
+    },
+  ) => {
     const offset = info.offset.x;
     const velocity = info.velocity.x;
 

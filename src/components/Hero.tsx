@@ -19,7 +19,7 @@ const Hero = () => {
           transition={{ duration: 10, repeat: Infinity }}
         />
         <div className="absolute -inset-10 opacity-30">
-          {[...Array(15)].map((_, i) => (
+          {Array.from({ length: 15 }).map((_, i) => (
             <motion.div
               key={i}
               className="absolute bg-white/20 rounded-full blur-sm"
@@ -68,7 +68,7 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-r from-blue-800 via-purple-500 to-pink-400 bg-clip-text text-transparent mb-2">
+            <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mb-2">
               Lyden CHAI
             </span>
             <span className="text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
@@ -102,7 +102,7 @@ const Hero = () => {
                   .getElementById("projects")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className="w-full sm:w-auto bg-gradient-to-r from-indigo-400 to-purple-400 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base lg:text-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
+              className="w-full sm:w-auto bg-gradient-to-r from-indigo-400 to-indigo-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base lg:text-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

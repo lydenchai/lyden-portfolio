@@ -103,17 +103,23 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
             {navItems.map((item, index) => {
               const isActive = activeSection === item.section;
+              let navLinkClass =
+                "relative font-medium transition-all duration-300 px-2 py-1 lg:px-3 lg:py-2 text-sm lg:text-base ";
+              if (isActive) {
+                navLinkClass +=
+                  "text-[#635bff] bg-white backdrop-blur-md rounded-full";
+              } else if (scrolled) {
+                navLinkClass +=
+                  "text-gray-700 hover:text-[#635bff] hover:bg-purple-50/50 rounded-full";
+              } else {
+                navLinkClass +=
+                  "text-gray-300 hover:text-white hover:bg-white/10 rounded-full";
+              }
               return (
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className={`relative font-medium transition-all duration-300 px-2 py-1 lg:px-3 lg:py-2 text-sm lg:text-base ${
-                    isActive
-                      ? "text-[#635bff] bg-white backdrop-blur-md rounded-full"
-                      : scrolled
-                      ? "text-gray-700 hover:text-[#635bff] hover:bg-purple-50/50 rounded-full"
-                      : "text-gray-300 hover:text-white hover:bg-white/10 rounded-full"
-                  }`}
+                  className={navLinkClass}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
@@ -138,7 +144,7 @@ const Navbar = () => {
               );
             })}
             <motion.button
-              className="flex items-center gap-2 bg-gradient-to-r from-indigo-400 to-purple-400 text-white px-5 py-1 lg:px-7 lg:py-2 rounded-full font-semibold transition-all duration-300 text-base lg:text-lg cursor-pointer"
+              className="flex items-center gap-2 bg-gradient-to-r from-indigo-400 to-indigo-600 text-white px-5 py-1 lg:px-7 lg:py-2 rounded-full font-semibold transition-all duration-300 text-base lg:text-lg cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => handleNavClick("#contact")}

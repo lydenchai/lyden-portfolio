@@ -180,10 +180,9 @@ const Projects = () => {
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies &&
-                      project.technologies.filter(Boolean).map((tech, idx) => (
+                    {project.technologies?.filter(Boolean).map((tech) => (
                         <span
-                          key={idx}
+                          key={tech}
                           className="bg-gray-50 text-gray-600 text-xs font-medium px-3 py-1.5 rounded-full border border-gray-100"
                         >
                           {tech}
@@ -233,10 +232,9 @@ const Projects = () => {
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies &&
-                      project.technologies.filter(Boolean).map((tech, idx) => (
+                    {project.technologies?.filter(Boolean).map((tech) => (
                         <span
-                          key={idx}
+                          key={tech}
                           className="bg-gray-50 text-gray-600 text-xs font-medium px-3 py-1.5 rounded-full border border-gray-100"
                         >
                           {tech}

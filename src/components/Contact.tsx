@@ -121,7 +121,7 @@ const Contact = () => {
           transition={{ duration: 8, repeat: Infinity }}
         />
         <div className="absolute -inset-10 opacity-40">
-          {[...Array(16)].map((_, i) => (
+          {Array.from({ length: 16 }).map((_, i) => (
             <motion.div
               key={i}
               className="absolute bg-white/30 rounded-full blur-sm"
