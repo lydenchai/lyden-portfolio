@@ -16,14 +16,8 @@ import {
   mdiNodejs,
   mdiDatabase,
   mdiApi,
-  mdiMaterialUi, // We might need to check if this exists or use a substitute
-  mdiLeaf, // For standard "green" or similar if needed
+  mdiMaterialUi,
 } from "@mdi/js";
-
-// Make sure to define icons that might be missing or use generic ones if unsure of exact mdi name
-// But mdiMaterialUi might not be the exact name. Let's use mdiReact for Ionic and generic ones for others if needed.
-// actually mdiMaterialUi is likely mdiMaterialDesign but let's stick to what we know or generic.
-// safe bet: mdiCodeTags, mdiServer, mdiDatabase, mdiGit
 
 const Skills = () => {
   const skills = [
