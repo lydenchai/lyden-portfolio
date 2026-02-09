@@ -51,24 +51,20 @@ const BackToTop = () => {
           }}
           whileHover={{
             scale: 1.1,
-            boxShadow: "0 0 8px rgba(0, 113, 227, 0.6)",
           }}
           whileTap={{ scale: 0.95 }}
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 z-50 p-3 sm:p-4 bg-gradient-to-r from-indigo-400 to-indigo-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group back-to-top-pulse cursor-pointer"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 z-50 p-3 sm:p-4 bg-black/90 text-white rounded-full cursor-pointer"
           aria-label="Back to top"
           title="Back to top"
         >
           <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-            <ChevronUp
-              size={20}
-              className="sm:w-6 sm:h-6 lg:w-7 lg:h-7 group-hover:animate-bounce"
-            />
+            <ChevronUp size={20} className="sm:w-6 sm:h-6 lg:w-7 lg:h-7" />
           </motion.div>
 
           {/* Animated background ring */}
           <motion.div
-            className="absolute inset-0 rounded-full bg-[#0071e3] opacity-0 group-hover:opacity-20"
+            className="absolute inset-0 rounded-full bg-black/90 opacity-0"
             initial={false}
             whileHover={{
               scale: [1, 1.2, 1],

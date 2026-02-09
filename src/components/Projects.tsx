@@ -10,6 +10,7 @@ import rehabilitationImg from "../../public/images/rehabilitation.png";
 import goAheadImg from "../../public/images/go-ahead.png";
 import pinkyImg from "../../public/images/pinky-clothing-shop.png";
 import cgmcImg from "../../public/images/cgmc-hr.png";
+import stockifyImg from "../../public/images/stockify-ims.jpg";
 
 const Projects = () => {
   const projects = [
@@ -117,6 +118,21 @@ const Projects = () => {
         "Express.js",
       ],
     },
+    {
+      id: 11,
+      title: "Stockify Inventory Management System",
+      description:
+        "Stockify is a comprehensive inventory management system designed to streamline stock tracking, order processing, and inventory analytics for businesses of all sizes.",
+      image: stockifyImg,
+      featured: false,
+      technologies: [
+        "React.js",
+        "Tailwind CSS",
+        "Node.js",
+        "Sequelize",
+        "Express.js",
+      ],
+    },
   ];
 
   const featuredProjects = projects.filter((project) => project.featured);
@@ -134,7 +150,7 @@ const Projects = () => {
           className="text-center mb-14"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
-            My <span className="text-gradient">Projects</span>
+            My Projects
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg lg:text-xl">
             Showcasing enterprise-level applications and platforms I've
@@ -149,15 +165,12 @@ const Projects = () => {
             Featured Projects
           </h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {featuredProjects.map((project, index) => (
+            {featuredProjects.map((project) => (
               <motion.div
                 key={project.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl transition-all duration-300 overflow-hidden group"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="bg-white rounded-2xl border border-gray-100 overflow-hidden group"
               >
                 <div className="relative overflow-hidden aspect-video">
                   <img
@@ -167,7 +180,7 @@ const Projects = () => {
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = `https://via.placeholder.com/800x400/6366f1/ffffff?text=${encodeURIComponent(
-                        project.title
+                        project.title,
                       )}`;
                     }}
                   />
@@ -181,13 +194,13 @@ const Projects = () => {
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies?.filter(Boolean).map((tech) => (
-                        <span
-                          key={tech}
-                          className="bg-gray-50 text-gray-600 text-xs font-medium px-3 py-1.5 rounded-full border border-gray-100"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                      <span
+                        key={tech}
+                        className="bg-gray-50 text-gray-600 text-xs font-medium px-3 py-1.5 rounded-full border border-gray-100"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </motion.div>
@@ -201,15 +214,12 @@ const Projects = () => {
             Other Projects
           </h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {otherProjects.map((project, index) => (
+            {otherProjects.map((project) => (
               <motion.div
                 key={project.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl transition-all duration-300 overflow-hidden group"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="bg-white rounded-2xl border border-gray-100 overflow-hidden group"
               >
                 <div className="relative overflow-hidden aspect-video">
                   <img
@@ -219,7 +229,7 @@ const Projects = () => {
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = `https://via.placeholder.com/800x400/6366f1/ffffff?text=${encodeURIComponent(
-                        project.title
+                        project.title,
                       )}`;
                     }}
                   />
@@ -233,13 +243,13 @@ const Projects = () => {
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies?.filter(Boolean).map((tech) => (
-                        <span
-                          key={tech}
-                          className="bg-gray-50 text-gray-600 text-xs font-medium px-3 py-1.5 rounded-full border border-gray-100"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                      <span
+                        key={tech}
+                        className="bg-gray-50 text-gray-600 text-xs font-medium px-3 py-1.5 rounded-full border border-gray-100"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </motion.div>

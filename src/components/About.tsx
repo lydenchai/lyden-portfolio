@@ -5,6 +5,7 @@ const About = () => {
   const skills = [
     { name: "Angular", level: 85, color: "from-red-600 to-red-500" }, // Angular Red
     { name: "Vue", level: 60, color: "from-green-500 to-green-400" }, // Vue Green
+    { name: "React", level: 50, color: "from-blue-500 to-blue-400" }, // Vue Green
     { name: "JavaScript", level: 80, color: "from-yellow-400 to-yellow-300" }, // JavaScript Yellow
     { name: "TypeScript", level: 80, color: "from-blue-600 to-blue-500" }, // TypeScript Blue
     { name: "HTML5/CSS", level: 90, color: "from-orange-400 to-orange-500" }, // Tailwind Cyan
@@ -99,11 +100,11 @@ const About = () => {
               work seamlessly on any device.
             </p>
             <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-              I specialize in <strong>Angular</strong> and{" "}
-              <strong>Vue.js</strong>, along with <strong>TypeScript</strong>{" "}
-              and <strong>Tailwind CSS</strong>. My focus is on writing clean,
-              scalable code and bringing designs to life through smooth,
-              high-performance interfaces.
+              I specialize in <strong>Angular</strong>, <strong>Vue.js</strong>,
+              and <strong>React.js</strong> along with{" "}
+              <strong>TypeScript</strong> and <strong>Tailwind CSS</strong>. My
+              focus is on writing clean, scalable code and bringing designs to
+              life through smooth, high-performance interfaces.
             </p>
             <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
               Beyond coding, I'm always eager to learn new technologies, improve

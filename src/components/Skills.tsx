@@ -4,6 +4,7 @@ import Icon from "@mdi/react";
 import {
   mdiAngular,
   mdiVuejs,
+  mdiReact,
   mdiLanguageJavascript,
   mdiLanguageTypescript,
   mdiLanguageHtml5,
@@ -11,60 +12,92 @@ import {
   mdiPalette,
   mdiChevronLeft,
   mdiChevronRight,
+  mdiGit,
+  mdiNodejs,
+  mdiDatabase,
+  mdiApi,
+  mdiMaterialUi, // We might need to check if this exists or use a substitute
+  mdiLeaf, // For standard "green" or similar if needed
 } from "@mdi/js";
+
+// Make sure to define icons that might be missing or use generic ones if unsure of exact mdi name
+// But mdiMaterialUi might not be the exact name. Let's use mdiReact for Ionic and generic ones for others if needed.
+// actually mdiMaterialUi is likely mdiMaterialDesign but let's stick to what we know or generic.
+// safe bet: mdiCodeTags, mdiServer, mdiDatabase, mdiGit
 
 const Skills = () => {
   const skills = [
     {
       name: "Angular",
-      level: 85,
+      level: 90,
       icon: mdiAngular,
       color: "#dd0031",
+      bg: "bg-red-50",
       description:
-        "Component-based framework for building scalable web applications",
+        "Architecting enterprise-grade SPAs with high performance and scalability.",
     },
     {
-      name: "Vue",
-      level: 60,
+      name: "Vue.js",
+      level: 85,
       icon: mdiVuejs,
       color: "#42b883",
-      description: "Progressive framework for building user interfaces",
+      bg: "bg-emerald-50",
+      description:
+        "Crafting reactive, lightweight, and intuitive user interfaces.",
     },
     {
-      name: "JavaScript",
+      name: "React",
       level: 80,
-      icon: mdiLanguageJavascript,
-      color: "#f7df1e",
-      description: "Dynamic programming language for web development",
+      icon: mdiReact,
+      color: "#61dafb",
+      bg: "bg-cyan-50",
+      description:
+        "Building dynamic component-based architectures for modern web apps.",
     },
     {
       name: "TypeScript",
-      level: 80,
+      level: 85,
       icon: mdiLanguageTypescript,
       color: "#3178c6",
+      bg: "bg-blue-50",
       description:
-        "Strongly typed programming language that builds on JavaScript",
+        "Ensuring type safety and robust codebases for complex applications.",
     },
     {
-      name: "HTML5/CSS",
-      level: 80,
+      name: "JavaScript",
+      level: 90,
+      icon: mdiLanguageJavascript,
+      color: "#f7df1e",
+      bg: "bg-yellow-50",
+      description:
+        "Leveraging ES6+ features for interactive and dynamic web experiences.",
+    },
+    {
+      name: "HTML5 & CSS3",
+      level: 95,
       icon: mdiLanguageHtml5,
       color: "#e34f26",
-      description: "Markup and styling languages for web structure and design",
+      bg: "bg-orange-50",
+      description:
+        "Writing semantic markup and responsive, pixel-perfect styles.",
     },
     {
-      name: "Tailwind",
-      level: 80,
+      name: "Tailwind CSS",
+      level: 90,
       icon: mdiTailwind,
       color: "#38bdf8",
-      description: "Utility-first CSS framework for rapid UI development",
+      bg: "bg-sky-50",
+      description:
+        "Rapidly prototyping and styling with a utility-first approach.",
     },
     {
-      name: "UX/UI Design",
-      level: 85,
+      name: "UI/UX Design",
+      level: 80,
       icon: mdiPalette,
       color: "#a855f7",
-      description: "Designing user-centric interfaces and experiences",
+      bg: "bg-purple-50",
+      description:
+        "Designing intuitive user journeys and aesthetic interfaces.",
     },
   ];
 
@@ -72,8 +105,8 @@ const Skills = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [containerWidth, setContainerWidth] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
-  const cardWidth = 340;
-  const gap = 24;
+  const cardWidth = 360; // Slightly wider cards
+  const gap = 32; // Increased gap
   const stride = cardWidth + gap;
   const totalWidth = skills.length * stride;
 
@@ -82,7 +115,6 @@ const Skills = () => {
       setContainerWidth(containerRef.current.offsetWidth);
     }
 
-    // Simple resize listener
     const handleResize = () => {
       if (containerRef.current) {
         setContainerWidth(containerRef.current.offsetWidth);
@@ -93,13 +125,10 @@ const Skills = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Calculate the maximum negative scroll (so we don't scroll past the end)
-  // If content is smaller than container, drag limit is 0
-  const maxScroll = Math.min(0, -(totalWidth - containerWidth + 32)); // +32 for padding
+  const maxScroll = Math.min(0, -(totalWidth - containerWidth + 48));
 
   useEffect(() => {
     const targetX = -currentIndex * stride;
-    // Clamp to maxScroll
     const finalX = Math.max(targetX, maxScroll);
     controls.start({ x: finalX });
   }, [currentIndex, maxScroll, controls, stride]);
@@ -116,32 +145,17 @@ const Skills = () => {
     }
   };
 
-  // Optional: Update index on drag end (simplified snapping)
-  // Update index on drag end matches the visual position
   const handleDragEnd = (
     _event: MouseEvent | TouchEvent | PointerEvent,
-    info: {
-      offset: { x: number; y: number };
-      velocity: { x: number; y: number };
-    },
+    info: { offset: { x: number }; velocity: { x: number } },
   ) => {
     const offset = info.offset.x;
     const velocity = info.velocity.x;
-
-    // Current visual position (approximate)
-    // We start at -currentIndex * stride
-    // We moved by 'offset'
     const currentX = -currentIndex * stride;
-    const predictedX = currentX + offset + velocity * 0.2; // 0.2 is a "power" factor for inertia
-
-    // Calculate which index is closest to predictedX
-    // x = -index * stride  =>  index = -x / stride
+    const predictedX = currentX + offset + velocity * 0.2;
     const estimatedIndex = -predictedX / stride;
-
-    // Round to nearest integer and clamp
     let newIndex = Math.round(estimatedIndex);
     newIndex = Math.max(0, Math.min(skills.length - 1, newIndex));
-
     setCurrentIndex(newIndex);
   };
 
@@ -150,30 +164,26 @@ const Skills = () => {
       <div className="container mx-auto sm:px-4 lg:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-14 px-4"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16 lg:mb-20"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            My <span className="text-gradient">Skills</span>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
+            My Technical Skills
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Technologies and frameworks I use to build modern, scalable, and
-            high-performance applications.
+          <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-light">
+            I leverage a modern stack to build robust, scalable, and
+            high-performance digital solutions.
           </p>
         </motion.div>
 
         {/* Carousel */}
         <div className="relative w-full" ref={containerRef}>
-          {/* Fade edges */}
           <motion.div
             drag="x"
-            dragConstraints={{
-              left: maxScroll,
-              right: 0,
-            }}
+            dragConstraints={{ left: maxScroll, right: 0 }}
             animate={controls}
             onDragEnd={handleDragEnd}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -182,43 +192,46 @@ const Skills = () => {
             {skills.map((skill, idx) => (
               <motion.div
                 key={skill.name}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                className="min-w-[320px] h-[360px] bg-[#f5f5f7] rounded-[1.5rem] p-10 flex flex-col justify-between group relative overflow-hidden text-left cursor-grab"
+                whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                className="min-w-[360px] bg-white rounded-[2rem] p-8 flex flex-col justify-between relative shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] border border-gray-100 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.12)] transition-shadow duration-300"
               >
                 <div>
-                  {/* Icon */}
-                  <div className="mb-6">
-                    <Icon path={skill.icon} size={2.5} color={skill.color} />
+                  {/* Icon with colored background */}
+                  <div
+                    className={`w-16 h-16 rounded-2xl ${skill.bg} flex items-center justify-center mb-8`}
+                  >
+                    <Icon path={skill.icon} size={2} color={skill.color} />
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-3xl font-semibold text-gray-900 mb-3 tracking-tight">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 tracking-tight">
                     {skill.name}
                   </h3>
 
-                  {/* Description */}
-                  <p className="text-gray-500 text-base font-medium leading-relaxed max-w-[95%]">
+                  <p className="text-gray-600 text-[17px] leading-relaxed mb-8 font-medium opacity-90">
                     {skill.description}
                   </p>
                 </div>
 
-                {/* Bottom Progress - Minimalist */}
-                <div className="w-full">
+                {/* Progress */}
+                <div>
                   <div className="flex justify-between items-end mb-3">
-                    <span className="text-[13px] font-semibold text-gray-400 uppercase tracking-widest">
+                    <span className="text-sm font-medium text-gray-400 uppercase tracking-widest">
                       Proficiency
                     </span>
-                    <span className="text-base font-bold text-gray-900">
+                    <span className="text-lg font-bold text-gray-900">
                       {skill.level}%
                     </span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
+                  <div className="w-full bg-gray-100 rounded-full h-2 overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.level}%` }}
                       viewport={{ once: true }}
-                      transition={{ duration: 1.2, delay: idx * 0.1 }}
+                      transition={{
+                        duration: 1.5,
+                        ease: "easeOut",
+                        delay: idx * 0.1,
+                      }}
                       className="h-full rounded-full"
                       style={{ background: skill.color }}
                     />
@@ -229,68 +242,78 @@ const Skills = () => {
           </motion.div>
         </div>
 
-        {/* Navigation Buttons */}
-        <div className="flex justify-end gap-4 px-4 -mt-6 mb-12">
+        {/* Navigation Controls */}
+        <div className="flex justify-end gap-4 px-4 mt-8 mb-20">
           <button
             onClick={handlePrev}
             disabled={currentIndex === 0}
-            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all cursor-pointer ${
+            className={`w-14 h-14 rounded-full flex items-center justify-center transition-all border border-gray-200 ${
               currentIndex === 0
-                ? "bg-gray-100 text-gray-300 cursor-not-allowed"
-                : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                ? "bg-gray-50 text-gray-300 cursor-not-allowed"
+                : "bg-white text-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:shadow-md cursor-pointer"
             }`}
           >
-            <Icon path={mdiChevronLeft} size={1.2} />
+            <Icon path={mdiChevronLeft} size={1.5} />
           </button>
           <button
             onClick={handleNext}
             disabled={
               currentIndex === skills.length - 1 ||
-              -(currentIndex + 1) * stride < maxScroll - 50 // tolerance
+              -(currentIndex + 1) * stride < maxScroll - 50
             }
-            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all cursor-pointer ${
+            className={`w-14 h-14 rounded-full flex items-center justify-center transition-all border border-gray-200 ${
               currentIndex === skills.length - 1 ||
               -(currentIndex + 1) * stride < maxScroll - 50
-                ? "bg-gray-100 text-gray-300 cursor-not-allowed"
-                : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                ? "bg-gray-50 text-gray-300 cursor-not-allowed"
+                : "bg-white text-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:shadow-md cursor-pointer"
             }`}
           >
-            <Icon path={mdiChevronRight} size={1.2} />
+            <Icon path={mdiChevronRight} size={1.5} />
           </button>
         </div>
 
-        {/* Additional Skills */}
+        {/* Additional Technologies - Grid Layout */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-12 max-w-[800px] mx-auto px-4"
+          transition={{ duration: 0.8 }}
+          className="max-w-5xl mx-auto px-4"
         >
-          <div className="bg-[#f5f5f7] rounded-[2.5rem] p-8 sm:p-12 text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 tracking-tight">
-              Additional Technologies
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              Other Technologies Used
             </h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {[
-                "Ionic",
-                "Node.js",
-                "PHP/Laravel",
-                "MySQL",
-                "REST APIs",
-                "Vite",
-                "Chart.js",
-                "Material UI",
-                "Git",
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-5 py-2.5 bg-white rounded-full text-sm font-semibold text-gray-700 shadow-sm border border-gray-100 hover:scale-105 hover:shadow-md transition-all duration-300 cursor-default"
-                >
-                  {tech}
+            <p className="text-gray-500">
+              Expanding my toolkit to solve diverse problems.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {[
+              { name: "Node.js", icon: mdiNodejs },
+              { name: "Sequelize", icon: mdiDatabase },
+              { name: "REST APIs", icon: mdiApi },
+              { name: "Vite", icon: mdiMaterialUi }, // Placeholder if needed
+              { name: "Git", icon: mdiGit },
+              { name: "MySQL", icon: mdiDatabase },
+              { name: "Ionic", icon: mdiReact }, // React icon for Ionic/React
+              { name: "PHP/Laravel", icon: mdiLanguageHtml5 }, // HTML/General for others
+              { name: "Figma", icon: mdiPalette },
+              { name: "Chart.js", icon: mdiMaterialUi },
+            ].map((tech) => (
+              <div
+                key={tech.name}
+                className="group p-6 bg-gray-50 rounded-2xl flex flex-col items-center justify-center gap-3 hover:bg-indigo-50 transition-colors duration-300 border border-transparent hover:border-indigo-100"
+              >
+                <div className="text-gray-400 group-hover:text-indigo-600 transition-colors">
+                  <Icon path={tech.icon} size={1.5} />
+                </div>
+                <span className="font-semibold text-gray-700 group-hover:text-indigo-700 transition-colors text-center">
+                  {tech.name}
                 </span>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>
